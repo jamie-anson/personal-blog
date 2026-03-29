@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout title="Posts | Jammie on AI-native companies" description="All essays and supporting posts.">
+  <section class="section-block">
+    <div class="section-heading">
+      <p class="eyebrow">Archive</p>
+      <h1>All posts</h1>
+      <p class="hero-copy">
+        The archive is intentionally simple for now: one highlighted thesis and room for the
+        supporting body of work to grow.
+      </p>
+    </div>
+    <div class="post-list">
+      {
+        posts.map((post) => (
+          <a class="post-card" href={`/posts/${post.slug}/`}>
+            <div>
+              <p class="card-meta">{post.data.featured ? 'Featured' : 'Essay'}</p>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.description}</p>
+            </div>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric'
+              })}
+            </time>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

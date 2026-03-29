@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
+const supportingPosts = posts.filter((post) => post.id !== featuredPost?.id);
+---
+
+<BaseLayout>
+  <section class="hero">
+    <p class="eyebrow">Essays on AI-native companies</p>
+    <h1>
+      A minimal writing space for thinking clearly about how companies change when execution is no
+      longer scarce.
+    </h1>
+    <p class="hero-copy">
+      The highlight essay introduces the system. Everything after that exists to pressure-test,
+      extend, and operationalize the idea.
+    </p>
+  </section>
+
+  {
+    featuredPost && (
+      <section class="feature-grid">
+        <div class="feature-copy">
+          <p class="eyebrow">Highlight post</p>
+          <h2>{featuredPost.data.title}</h2>
+          <p>{featuredPost.data.description}</p>
+          <a class="button-link" href={`/posts/${featuredPost.slug}/`}>
+            Read the essay
+          </a>
+        </div>
+        <div class="feature-card">
+          <p class="feature-label">Thesis</p>
+          <p>
+            AI removes execution constraints. The remaining bottleneck is organizational clarity:
+            defining outcomes well enough for humans and agents to iterate toward them.
+          </p>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section-block">
+    <div class="section-heading">
+      <p class="eyebrow">What this blog is for</p>
+      <h2>One thesis, then a body of evidence.</h2>
+    </div>
+    <div class="mini-grid">
+      <article class="mini-card">
+        <h3>Start with the model</h3>
+        <p>The featured piece defines the Clarity Method and its fit for AI-native organizations.</p>
+      </article>
+      <article class="mini-card">
+        <h3>Then add support</h3>
+        <p>Future posts can stay narrow: case studies, operating patterns, objections, and tools.</p>
+      </article>
+      <article class="mini-card">
+        <h3>Keep it fast</h3>
+        <p>No client-side framework, no unnecessary scripts, and content-first pages for strong load times.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-block">
+    <div class="section-heading">
+      <p class="eyebrow">Posts</p>
+      <h2>Writing archive</h2>
+    </div>
+    <div class="post-list">
+      {
+        posts.map((post) => (
+          <a class="post-card" href={`/posts/${post.slug}/`}>
+            <div>
+              <p class="card-meta">{post.data.featured ? 'Featured' : 'Essay'}</p>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+            </div>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric'
+              })}
+            </time>
+          </a>
+        ))
+      }
+    </div>
+    {
+      supportingPosts.length === 0 && (
+        <p class="empty-state">
+          The archive starts with a single highlight essay. Supporting posts can be added under
+          <code>src/content/posts/</code>.
+        </p>
+      )
+    }
+  </section>
+</BaseLayout>
