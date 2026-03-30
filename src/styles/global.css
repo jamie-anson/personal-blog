@@ -64,18 +64,16 @@ code {
 }
 
 .site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  display: block;
   margin-bottom: 3rem;
-  padding: 0.9rem 1rem;
+  padding: 0.9rem 0;
 }
 
 .site-intro {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  align-items: flex-start;
+  gap: 0.35rem;
 }
 
 .brand,
@@ -105,13 +103,15 @@ code {
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
+  gap: 0.5rem;
+  padding-top: 0.35rem;
 }
 
 .site-nav a {
-  padding: 0.45rem 0.8rem;
+  padding: 0.35rem 0;
   border-radius: 999px;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
+  color: var(--muted);
 }
 
 .site-nav a.active,
@@ -121,6 +121,12 @@ code {
 .mini-card:hover {
   background: var(--accent-strong);
   color: #f6f7f0;
+}
+
+.site-nav a.active,
+.site-nav a:hover {
+  background: transparent;
+  color: var(--accent-strong);
 }
 
 .hero {
@@ -536,9 +542,7 @@ code {
   }
 
   .site-header {
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 1rem;
+    padding: 1rem 0;
   }
 
   .site-nav {
