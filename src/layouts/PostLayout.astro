@@ -38,24 +38,38 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
     {
       tocHeadings.length > 0 && (
         <aside class="article-toc" aria-label="On this page">
-          <div class="toc-card">
-            <p class="toc-title">On this page</p>
-            <nav class="toc-nav">
-              {
-                tocHeadings.map((heading) => (
-                  <a
-                    href={`#${heading.slug}`}
-                    class:list={[
-                      'toc-link',
-                      heading.depth === 3 && 'toc-link-nested'
-                    ]}
-                  >
-                    {heading.text}
-                  </a>
-                ))
-              }
-            </nav>
-          </div>
+          <p class="toc-title">On this page</p>
+          <nav class="toc-nav">
+            {
+              tocHeadings.map((heading) => (
+                <a
+                  href={`#${heading.slug}`}
+                  class:list={[
+                    'toc-link',
+                    heading.depth === 3 && 'toc-link-nested'
+                  ]}
+                >
+                  {heading.text}
+                </a>
+              ))
+            }
+          </nav>
+          {
+            relatedPosts.length > 0 && (
+              <div class="toc-secondary">
+                <p class="toc-title">Other pages</p>
+                <nav class="toc-nav">
+                  {
+                    relatedPosts.map((post) => (
+                      <a class="toc-link" href={`/posts/${post.slug}/`}>
+                        {post.data.title}
+                      </a>
+                    ))
+                  }
+                </nav>
+              </div>
+            )
+          }
         </aside>
       )
     }

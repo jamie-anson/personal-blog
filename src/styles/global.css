@@ -197,7 +197,7 @@ code {
 .section-heading h1,
 .section-heading h2,
 .article-header h1 {
-  font-size: clamp(2.1rem, 4.2vw, 3.8rem);
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
   margin: 0.4rem 0 1rem;
 }
 
@@ -287,6 +287,9 @@ code {
 }
 
 .article-toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
   padding-top: 1.25rem;
 }
 
@@ -294,6 +297,10 @@ code {
   margin: 0 0 0.85rem;
   font-weight: 700;
   color: var(--text);
+}
+
+.toc-secondary {
+  margin-top: 1.75rem;
 }
 
 .toc-nav {
@@ -411,11 +418,19 @@ code {
 .article-body :where(h2, h3, h4) {
   line-height: 1.05;
   letter-spacing: -0.02em;
-  margin: 2.4rem 0 1rem;
+  margin: 2.2rem 0 0.85rem;
 }
 
 .article-body h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+}
+
+.article-body h3 {
+  font-size: clamp(1.15rem, 1.5vw, 1.45rem);
+}
+
+.article-body h4 {
+  font-size: 1.05rem;
 }
 
 .article-body p,
