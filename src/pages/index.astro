@@ -13,14 +13,12 @@ const supportingPosts = posts.filter((post) => post.id !== featuredPost?.id);
 <BaseLayout>
   <div class="home-layout">
     <aside class="home-sidebar" aria-label="Homepage introduction">
-      <p class="eyebrow">Writing</p>
       <h1>Essays on clarity, systems and AI-native companies.</h1>
       <p class="hero-copy">
         A growing body of work around the Clarity thesis, with essays that explain the model and
         examples that show how it changes real operating decisions.
       </p>
       <div class="home-sidebar-note">
-        <p class="card-meta">Start here</p>
         <p>
           Begin with the core thesis, then move through the supporting essays as the system gets
           more concrete.
@@ -33,7 +31,6 @@ const supportingPosts = posts.filter((post) => post.id !== featuredPost?.id);
         featuredPost && (
           <a class="home-feature" href={`/posts/${featuredPost.slug}/`}>
             <div class="home-feature-copy">
-              <p class="card-meta">Featured essay</p>
               <h2>{featuredPost.data.title}</h2>
               <p>{featuredPost.data.description}</p>
             </div>
@@ -48,21 +45,11 @@ const supportingPosts = posts.filter((post) => post.id !== featuredPost?.id);
         )
       }
 
-      {
-        supportingPosts.length > 0 && (
-          <div class="home-section-heading">
-            <p class="eyebrow">Latest</p>
-            <h2>Recent posts</h2>
-          </div>
-        )
-      }
-
       <div class="post-list">
         {
           supportingPosts.map((post) => (
             <a class="post-card" href={`/posts/${post.slug}/`}>
               <div>
-                <p class="card-meta">Essay</p>
                 <h3>{post.data.title}</h3>
                 <p>{post.data.description}</p>
               </div>

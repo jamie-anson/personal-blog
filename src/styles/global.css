@@ -263,9 +263,9 @@ code {
 
 .home-layout {
   display: grid;
-  grid-template-columns: minmax(15rem, 19rem) minmax(0, 1fr);
+  grid-template-columns: minmax(17rem, 23rem) minmax(0, 1fr);
   align-items: start;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 
 .home-sidebar {
@@ -278,15 +278,19 @@ code {
 .home-sidebar h1 {
   font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
   font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 0.95;
-  margin: 0.4rem 0 1rem;
-  font-size: clamp(2.2rem, 4vw, 3.75rem);
+  letter-spacing: -0.045em;
+  line-height: 0.93;
+  margin: 0 0 1.1rem;
+  max-width: 9ch;
+  font-size: clamp(3rem, 5.5vw, 5.4rem);
+  text-wrap: balance;
 }
 
 .home-sidebar .hero-copy {
   margin: 0;
-  font-size: 1.2rem;
+  max-width: 31rem;
+  font-size: 1.24rem;
+  line-height: 1.65;
 }
 
 .home-sidebar-note {
@@ -295,16 +299,11 @@ code {
   border-top: 1px solid var(--line);
 }
 
-.home-sidebar-note p:last-child,
-.home-section-heading p:last-child {
-  margin-bottom: 0;
-}
-
 .home-sidebar-note p:last-child {
-  margin-top: 0.35rem;
+  margin: 0;
   color: var(--muted);
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.08rem;
+  line-height: 1.7;
 }
 
 .home-main {
@@ -349,35 +348,24 @@ code {
 
 .home-feature-copy h2 {
   font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 0.95;
-  margin: 0.35rem 0 0;
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 450;
+  letter-spacing: -0.04em;
+  line-height: 0.94;
+  margin: 0;
+  font-size: clamp(2.1rem, 4vw, 3.35rem);
+  text-wrap: balance;
 }
 
 .home-feature-copy p:last-child {
-  margin-bottom: 0;
+  margin: 0.8rem 0 0;
   color: var(--muted);
-  font-size: 1.25rem;
+  font-size: 1.22rem;
+  line-height: 1.65;
 }
 
 .home-feature time {
   color: var(--muted);
   white-space: nowrap;
-}
-
-.home-section-heading {
-  padding: 0.35rem 0 0.15rem;
-}
-
-.home-section-heading h2 {
-  margin: 0.35rem 0 0;
-  font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 0.95;
-  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
 }
 
 .mini-grid {
@@ -397,7 +385,7 @@ code {
 }
 
 .post-list {
-  margin-top: 1.25rem;
+  margin-top: 0.4rem;
 }
 
 .post-card {
@@ -409,8 +397,18 @@ code {
 
 .post-card h2,
 .post-card h3 {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  margin-top: 0.35rem;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 450;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  margin-top: 0;
+  text-wrap: balance;
+}
+
+.post-card p {
+  margin: 0.85rem 0 0;
+  font-size: 1.18rem;
+  line-height: 1.65;
 }
 
 .empty-state {
@@ -689,6 +687,11 @@ code {
     padding-top: 0;
   }
 
+  .home-sidebar h1 {
+    max-width: 11ch;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+
   .home-feature,
   .post-card {
     flex-direction: column;
@@ -829,6 +832,28 @@ code {
 
   .home-feature {
     padding: 1.15rem;
+  }
+
+  .home-sidebar h1 {
+    max-width: 12ch;
+    font-size: clamp(2.35rem, 9vw, 3.2rem);
+    line-height: 0.96;
+  }
+
+  .home-sidebar .hero-copy,
+  .home-feature-copy p:last-child,
+  .post-card p,
+  .home-sidebar-note p:last-child {
+    font-size: 1.12rem;
+  }
+
+  .home-feature-copy h2 {
+    font-size: clamp(1.9rem, 8vw, 2.45rem);
+  }
+
+  .post-card h2,
+  .post-card h3 {
+    font-size: clamp(1.75rem, 7vw, 2.15rem);
   }
 
   .article-shell {
