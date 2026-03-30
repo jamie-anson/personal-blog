@@ -4,9 +4,10 @@ import { site } from '../lib/site';
 interface Props {
   title?: string;
   description?: string;
+  hideHeader?: boolean;
 }
 
-const { title = site.title, description = site.description } = Astro.props;
+const { title = site.title, description = site.description, hideHeader = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.url);
 ---
 
@@ -32,27 +33,31 @@ const canonical = new URL(Astro.url.pathname, site.url);
   </head>
   <body>
     <div class="page-shell">
-      <header class="site-header">
-        <div class="site-intro">
-          <a class="brand" href="/">{site.name}</a>
-          <p class="site-subheading">
-            Clarity is a system for building AI-native companies, created by Jamie Anson.
-          </p>
-          {
-            site.nav.length > 0 && (
-              <nav class="site-nav" aria-label="Primary">
-                {
-                  site.nav.map((item) => (
-                    <a href={item.href} class={Astro.url.pathname === item.href ? 'active' : ''}>
-                      {item.label}
-                    </a>
-                  ))
-                }
-              </nav>
-            )
-          }
-        </div>
-      </header>
+      {
+        !hideHeader && (
+          <header class="site-header">
+            <div class="site-intro">
+              <a class="brand" href="/">{site.name}</a>
+              <p class="site-subheading">
+                Clarity is a system for building AI-native companies, created by Jamie Anson.
+              </p>
+              {
+                site.nav.length > 0 && (
+                  <nav class="site-nav" aria-label="Primary">
+                    {
+                      site.nav.map((item) => (
+                        <a href={item.href} class={Astro.url.pathname === item.href ? 'active' : ''}>
+                          {item.label}
+                        </a>
+                      ))
+                    }
+                  </nav>
+                )
+              }
+            </div>
+          </header>
+        )
+      }
       <main>
         <slot />
       </main>
