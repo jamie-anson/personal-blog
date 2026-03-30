@@ -275,6 +275,7 @@ code {
   grid-template-columns: minmax(17rem, 23rem) minmax(0, 1fr);
   align-items: start;
   gap: 1.75rem;
+  padding-top: min(20vh, 11rem);
 }
 
 .home-sidebar {
@@ -523,7 +524,7 @@ code {
 .article-header {
   display: grid;
   gap: 1rem;
-  padding-top: 0.875rem;
+  padding-top: 0.45rem;
   padding-bottom: 3.5rem;
   border-bottom: 1px solid var(--line);
 }
@@ -534,7 +535,7 @@ code {
   flex-wrap: wrap;
   gap: 1rem;
   color: rgba(98, 113, 99, 0.66);
-  font-size: 1.1875rem;
+  font-size: 0.95rem;
 }
 
 .article-meta-spacer {
@@ -682,6 +683,7 @@ code {
 
   .home-layout {
     gap: 1rem;
+    padding-top: 0;
   }
 
   .home-sidebar {
