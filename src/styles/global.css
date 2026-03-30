@@ -85,20 +85,20 @@ code {
 .eyebrow-link {
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--muted);
 }
 
 .brand {
   color: var(--accent);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .site-subheading {
   margin: 0;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 1.125rem;
   line-height: 1.35;
 }
 
@@ -111,6 +111,7 @@ code {
 .site-nav a {
   padding: 0.45rem 0.8rem;
   border-radius: 999px;
+  font-size: 1.25rem;
 }
 
 .site-nav a.active,
@@ -157,7 +158,7 @@ code {
 .lede {
   max-width: 42rem;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1.3125rem;
 }
 
 .feature-grid,
@@ -313,7 +314,7 @@ code {
   display: block;
   padding: 0.3rem 0.2rem 0.3rem 1rem;
   color: var(--muted);
-  font-size: 0.96rem;
+  font-size: 1.2rem;
   line-height: 1.4;
   border-left: 2px solid transparent;
   transition:
@@ -340,17 +341,25 @@ code {
 
 .toc-link-nested {
   padding-left: 1.95rem;
-  font-size: 0.92rem;
+  font-size: 1.15rem;
 }
 
 .article-header {
+  display: grid;
+  gap: 1rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--line);
 }
 
+.article-utility {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .eyebrow-link {
   display: inline-flex;
-  margin-bottom: 1rem;
 }
 
 .article-meta {
@@ -358,7 +367,35 @@ code {
   flex-wrap: wrap;
   gap: 1rem;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 1.1875rem;
+}
+
+.article-title-block {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.article-title-block .lede {
+  margin: 0;
+  max-width: 40rem;
+}
+
+.article-summary {
+  max-width: 42rem;
+  padding: 1rem 1.1rem;
+  border-left: 2px solid rgba(77, 122, 75, 0.35);
+  background: rgba(255, 253, 247, 0.5);
+}
+
+.article-summary p {
+  margin: 0;
+}
+
+.article-summary p:last-child {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 1.2rem;
+  line-height: 1.55;
 }
 
 .article-body {
@@ -436,7 +473,7 @@ code {
 .article-body p,
 .article-body li,
 .article-body ol {
-  font-size: 1.08rem;
+  font-size: 1.35rem;
   color: #304036;
 }
 

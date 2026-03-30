@@ -16,6 +16,7 @@ export async function getStaticPaths() {
 
 const { post, relatedPosts } = Astro.props;
 const { Content, headings } = await render(post);
+const readingTime = Math.max(1, Math.round(post.body.split(/\s+/).filter(Boolean).length / 220));
 ---
 
 <PostLayout
@@ -24,6 +25,7 @@ const { Content, headings } = await render(post);
   pubDate={post.data.pubDate}
   updatedDate={post.data.updatedDate}
   featured={post.data.featured}
+  readingTime={readingTime}
   relatedPosts={relatedPosts}
   headings={headings}
 >

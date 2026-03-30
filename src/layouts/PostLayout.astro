@@ -7,6 +7,7 @@ interface Props {
   pubDate: Date;
   updatedDate?: Date;
   featured?: boolean;
+  readingTime?: number;
   relatedPosts?: Array<{
     slug: string;
     data: {
@@ -27,6 +28,7 @@ const {
   pubDate,
   updatedDate,
   featured = false,
+  readingTime,
   relatedPosts = [],
   headings = []
 } = Astro.props;
@@ -74,11 +76,15 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
       )
     }
     <article class="article-shell">
-      <a class="eyebrow-link" href="/posts/">All posts</a>
       <header class="article-header">
-        <p class="eyebrow">{featured ? 'Highlight essay' : 'Essay'}</p>
-        <h1>{title}</h1>
-        <p class="lede">{description}</p>
+        <div class="article-utility">
+          <a class="eyebrow-link" href="/">All posts</a>
+          <p class="eyebrow">{featured ? 'Highlight essay' : 'Essay'}</p>
+        </div>
+        <div class="article-title-block">
+          <h1>{title}</h1>
+          <p class="lede">{description}</p>
+        </div>
         <div class="article-meta">
           <time datetime={pubDate.toISOString()}>
             {pubDate.toLocaleDateString('en-GB', {
@@ -87,6 +93,7 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
               year: 'numeric'
             })}
           </time>
+          {readingTime && <span>{readingTime} min read</span>}
           {
             updatedDate && (
               <span>
@@ -100,6 +107,17 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
             )
           }
         </div>
+        {
+          featured && (
+            <div class="article-summary">
+              <p class="card-meta">In short</p>
+              <p>
+                Clarity is a system for replacing role-based coordination with explicit ownership of
+                outcomes, so AI expands responsibility instead of flattening people into operators.
+              </p>
+            </div>
+          )
+        }
       </header>
       <div class="article-body">
         <slot />
