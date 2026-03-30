@@ -730,6 +730,7 @@ code {
   .toc-drawer-backdrop {
     position: fixed;
     inset: 0;
+    z-index: 38;
     background: rgba(36, 44, 38, 0.2);
   }
 
@@ -738,6 +739,7 @@ code {
     top: 0;
     left: 0;
     bottom: 0;
+    z-index: 39;
     width: min(86vw, 21rem);
     padding: 1.2rem 1rem 1.5rem;
     overflow-y: auto;
@@ -787,6 +789,10 @@ code {
 
   .site-header {
     padding: 1rem 0;
+  }
+
+  .site-intro {
+    padding-left: 1.25rem;
   }
 
   .site-nav {
