@@ -37,39 +37,57 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
   <div class="article-layout">
     {
       tocHeadings.length > 0 && (
-        <aside class="article-toc" aria-label="On this page">
-          <p class="toc-title">On this page</p>
-          <nav class="toc-nav" data-toc-nav>
+        <aside class="article-toc" aria-label="On this page" data-toc-root>
+          <button
+            class="toc-mobile-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="article-toc-panel"
+            data-toc-toggle
+          >
+            <span>On this page</span>
+            <span class="toc-mobile-toggle-label">Menu</span>
+          </button>
+          <div class="toc-drawer-backdrop" hidden data-toc-backdrop></div>
+          <div class="article-toc-panel" id="article-toc-panel" data-toc-panel>
+            <div class="toc-panel-header">
+              <p class="toc-title">On this page</p>
+              <button class="toc-panel-close" type="button" aria-label="Close menu" data-toc-close>
+                Close
+              </button>
+            </div>
+            <nav class="toc-nav" data-toc-nav>
+              {
+                tocHeadings.map((heading) => (
+                  <a
+                    href={`#${heading.slug}`}
+                    class:list={[
+                      'toc-link',
+                      heading.depth === 3 && 'toc-link-nested'
+                    ]}
+                  >
+                    {heading.text}
+                  </a>
+                ))
+              }
+            </nav>
             {
-              tocHeadings.map((heading) => (
-                <a
-                  href={`#${heading.slug}`}
-                  class:list={[
-                    'toc-link',
-                    heading.depth === 3 && 'toc-link-nested'
-                  ]}
-                >
-                  {heading.text}
-                </a>
-              ))
+              relatedPosts.length > 0 && (
+                <div class="toc-secondary">
+                  <p class="toc-title">Other pages</p>
+                  <nav class="toc-nav">
+                    {
+                      relatedPosts.map((post) => (
+                        <a class="toc-link" href={`/posts/${post.slug}/`}>
+                          {post.data.title}
+                        </a>
+                      ))
+                    }
+                  </nav>
+                </div>
+              )
             }
-          </nav>
-          {
-            relatedPosts.length > 0 && (
-              <div class="toc-secondary">
-                <p class="toc-title">Other pages</p>
-                <nav class="toc-nav">
-                  {
-                    relatedPosts.map((post) => (
-                      <a class="toc-link" href={`/posts/${post.slug}/`}>
-                        {post.data.title}
-                      </a>
-                    ))
-                  }
-                </nav>
-              </div>
-            )
-          }
+          </div>
         </aside>
       )
     }
@@ -132,7 +150,55 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
   {
     tocHeadings.length > 0 && (
       <script is:inline>
+        const tocRoot = document.querySelector('[data-toc-root]');
         const tocNav = document.querySelector('[data-toc-nav]');
+
+        if (tocRoot) {
+          const tocToggle = tocRoot.querySelector('[data-toc-toggle]');
+          const tocPanel = tocRoot.querySelector('[data-toc-panel]');
+          const tocBackdrop = tocRoot.querySelector('[data-toc-backdrop]');
+          const tocClose = tocRoot.querySelector('[data-toc-close]');
+          const mobileQuery = window.matchMedia('(max-width: 900px)');
+
+          const setDrawerState = (isOpen) => {
+            tocRoot.classList.toggle('is-open', isOpen);
+            tocToggle?.setAttribute('aria-expanded', String(isOpen));
+
+            if (tocBackdrop) {
+              tocBackdrop.hidden = !isOpen;
+            }
+          };
+
+          const closeDrawer = () => setDrawerState(false);
+
+          tocToggle?.addEventListener('click', () => {
+            const isOpen = !tocRoot.classList.contains('is-open');
+            setDrawerState(isOpen);
+          });
+
+          tocClose?.addEventListener('click', closeDrawer);
+          tocBackdrop?.addEventListener('click', closeDrawer);
+
+          document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+              closeDrawer();
+            }
+          });
+
+          mobileQuery.addEventListener('change', (event) => {
+            if (!event.matches) {
+              closeDrawer();
+            }
+          });
+
+          tocPanel?.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+              if (mobileQuery.matches) {
+                closeDrawer();
+              }
+            });
+          });
+        }
 
         if (tocNav) {
           const tocLinks = Array.from(tocNav.querySelectorAll('a[href^="#"]'));

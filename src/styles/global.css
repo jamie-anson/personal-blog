@@ -3,7 +3,7 @@
   --surface: rgba(255, 253, 247, 0.82);
   --surface-strong: #fcfbf5;
   --line: rgba(68, 90, 63, 0.14);
-  --text: #38453D;
+  --text: #223128;
   --muted: #627163;
   --accent: #4d7a4b;
   --accent-strong: #365f35;
@@ -32,6 +32,13 @@ body {
     radial-gradient(circle at top, rgba(255, 255, 255, 0.9), rgba(244, 243, 234, 0) 38%),
     linear-gradient(180deg, #f7f6ee 0%, #f1f0e4 100%);
   line-height: 1.7;
+}
+
+p,
+li,
+blockquote {
+  text-wrap: pretty;
+  hyphens: auto;
 }
 
 a {
@@ -143,6 +150,7 @@ code {
   letter-spacing: -0.03em;
   line-height: 0.95;
   margin: 0;
+  text-wrap: balance;
 }
 
 .hero h1 {
@@ -425,6 +433,20 @@ code {
   padding-top: 1.25rem;
 }
 
+.toc-mobile-toggle,
+.toc-panel-close {
+  display: none;
+}
+
+.article-toc-panel {
+  display: grid;
+  gap: 0;
+}
+
+.toc-panel-header {
+  display: block;
+}
+
 .toc-title {
   margin: 0 0 0.85rem;
   font-weight: 700;
@@ -511,6 +533,10 @@ code {
 .article-title-block {
   display: grid;
   gap: 3rem;
+}
+
+.article-header h1 {
+  max-width: 16ch;
 }
 
 .article-title-block .lede {
@@ -658,15 +684,91 @@ code {
 
   .article-layout {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .article-toc {
-    position: static;
+    position: sticky;
+    top: 0.75rem;
     order: -1;
+    z-index: 20;
+    padding-top: 0;
   }
 
   .related-grid {
     grid-template-columns: 1fr;
+  }
+
+  .toc-mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.95rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(252, 251, 245, 0.96);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 12px 28px rgba(47, 68, 44, 0.08);
+    color: var(--text);
+    font: inherit;
+    font-size: 1rem;
+  }
+
+  .toc-mobile-toggle-label {
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.82rem;
+  }
+
+  .toc-drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(36, 44, 38, 0.2);
+  }
+
+  .article-toc-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(86vw, 21rem);
+    padding: 1.2rem 1rem 1.5rem;
+    overflow-y: auto;
+    border-right: 1px solid var(--line);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(244, 247, 239, 0.96)),
+      var(--surface-strong);
+    box-shadow: 0 20px 60px rgba(47, 68, 44, 0.18);
+    transform: translateX(calc(-100% - 1rem));
+    transition: transform 220ms ease;
+  }
+
+  .article-toc.is-open .article-toc-panel {
+    transform: translateX(0);
+  }
+
+  .toc-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .toc-panel-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.95rem;
   }
 }
 
@@ -700,5 +802,65 @@ code {
 
   .home-feature {
     padding: 1.15rem;
+  }
+
+  .article-shell {
+    padding: 1.25rem;
+  }
+
+  .article-header {
+    gap: 0.85rem;
+    padding-top: 0.4rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .article-title-block {
+    gap: 2rem;
+  }
+
+  .article-meta {
+    gap: 0.65rem;
+    font-size: 1rem;
+  }
+
+  .article-meta-spacer {
+    display: none;
+  }
+
+  .article-header h1 {
+    max-width: 11ch;
+    margin: 0.2rem 0 0.75rem;
+    font-size: clamp(2rem, 8vw, 2.55rem);
+    line-height: 0.98;
+  }
+
+  .lede {
+    font-size: 1.05rem;
+    line-height: 1.58;
+  }
+
+  .article-body {
+    padding-top: 1.75rem;
+  }
+
+  .article-body :where(h2, h3, h4) {
+    margin: 1.85rem 0 0.75rem;
+    line-height: 1.02;
+  }
+
+  .article-body h2 {
+    font-size: clamp(1.7rem, 6.5vw, 2.1rem);
+  }
+
+  .article-body h3 {
+    font-size: clamp(1.28rem, 5.2vw, 1.55rem);
+    line-height: 1.08;
+  }
+
+  .article-body p,
+  .article-body li,
+  .article-body ol {
+    font-size: 1.1rem;
+    line-height: 1.68;
   }
 }
