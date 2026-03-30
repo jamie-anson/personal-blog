@@ -7,6 +7,13 @@ interface Props {
   pubDate: Date;
   updatedDate?: Date;
   featured?: boolean;
+  relatedPosts?: Array<{
+    slug: string;
+    data: {
+      title: string;
+      description: string;
+    };
+  }>;
   headings?: Array<{
     depth: number;
     slug: string;
@@ -14,7 +21,15 @@ interface Props {
   }>;
 }
 
-const { title, description, pubDate, updatedDate, featured = false, headings = [] } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  featured = false,
+  relatedPosts = [],
+  headings = []
+} = Astro.props;
 const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
 ---
 
@@ -75,6 +90,27 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
       <div class="article-body">
         <slot />
       </div>
+      {
+        relatedPosts.length > 0 && (
+          <footer class="article-footer">
+            <div class="article-footer-heading">
+              <p class="eyebrow">Further reading</p>
+              <h2>Keep exploring the model</h2>
+            </div>
+            <div class="related-grid">
+              {
+                relatedPosts.map((post) => (
+                  <a class="related-card" href={`/posts/${post.slug}/`}>
+                    <p class="card-meta">Essay</p>
+                    <h3>{post.data.title}</h3>
+                    <p>{post.data.description}</p>
+                  </a>
+                ))
+              }
+            </div>
+          </footer>
+        )
+      }
     </article>
   </div>
 </BaseLayout>

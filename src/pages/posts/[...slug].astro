@@ -7,11 +7,14 @@ export async function getStaticPaths() {
 
   return posts.map((post) => ({
     params: { slug: post.slug },
-    props: { post }
+    props: {
+      post,
+      relatedPosts: posts.filter((candidate) => candidate.id !== post.id).slice(0, 2)
+    }
   }));
 }
 
-const { post } = Astro.props;
+const { post, relatedPosts } = Astro.props;
 const { Content, headings } = await render(post);
 ---
 
@@ -21,6 +24,7 @@ const { Content, headings } = await render(post);
   pubDate={post.data.pubDate}
   updatedDate={post.data.updatedDate}
   featured={post.data.featured}
+  relatedPosts={relatedPosts}
   headings={headings}
 >
   <Content />

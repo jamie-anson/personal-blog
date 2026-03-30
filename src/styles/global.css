@@ -70,13 +70,6 @@ code {
   gap: 1rem;
   margin-bottom: 3rem;
   padding: 0.9rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(252, 251, 245, 0.78);
-  backdrop-filter: blur(14px);
-  position: sticky;
-  top: 1rem;
-  z-index: 10;
 }
 
 .brand,
@@ -172,7 +165,7 @@ code {
 .post-card,
 .article-shell,
 .section-block,
-.toc-card {
+.related-card {
   border: 1px solid var(--line);
   border-radius: 1.75rem;
   background: var(--surface);
@@ -281,12 +274,7 @@ code {
 }
 
 .article-toc {
-  position: sticky;
-  top: 6.75rem;
-}
-
-.toc-card {
-  padding: 1.25rem 1rem;
+  padding-top: 1.25rem;
 }
 
 .toc-title {
@@ -355,6 +343,56 @@ code {
 
 .article-body {
   padding-top: 1rem;
+}
+
+.article-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.article-footer-heading h2,
+.related-card h3 {
+  font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.article-footer-heading h2 {
+  margin-top: 0.35rem;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.related-card {
+  padding: 1.25rem;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.related-card:hover {
+  transform: translateY(-2px);
+  background: var(--accent-strong);
+  color: #f6f7f0;
+}
+
+.related-card h3 {
+  margin-top: 0.35rem;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+.related-card p:last-child {
+  margin-bottom: 0;
 }
 
 .article-body :where(h2, h3, h4) {
@@ -433,8 +471,8 @@ code {
     order: -1;
   }
 
-  .toc-card {
-    padding: 1rem;
+  .related-grid {
+    grid-template-columns: 1fr;
   }
 }
 
