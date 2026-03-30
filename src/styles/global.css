@@ -21,10 +21,12 @@
 }
 
 html {
+  min-height: 100%;
   scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
   color: var(--text);
   font-family: Iowan Old Style, Palatino Linotype, Book Antiqua, Georgia, serif;
@@ -71,7 +73,14 @@ code {
 .page-shell {
   width: min(calc(100% - 2rem), var(--max-width));
   margin: 0 auto;
+  min-height: 100svh;
   padding: 1.25rem 0 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-shell > main {
+  flex: 1 0 auto;
 }
 
 .site-header,
