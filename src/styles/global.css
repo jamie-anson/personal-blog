@@ -688,11 +688,13 @@ code {
   }
 
   .article-toc {
-    position: sticky;
-    top: 0.75rem;
+    position: fixed;
+    right: 0.75rem;
+    bottom: 0.85rem;
     order: -1;
     z-index: 20;
     padding-top: 0;
+    width: min(calc(100vw - 1.5rem), 24rem);
   }
 
   .related-grid {
@@ -769,6 +771,10 @@ code {
     color: var(--muted);
     font: inherit;
     font-size: 0.95rem;
+  }
+
+  .article-layout {
+    padding-bottom: 4.75rem;
   }
 }
 
