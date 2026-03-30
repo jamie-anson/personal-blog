@@ -842,6 +842,11 @@ code {
     width: min(calc(100% - 1rem), var(--max-width));
   }
 
+  .home-feature,
+  .post-card {
+    border-radius: 1.25rem;
+  }
+
   .home-sidebar {
     padding-inline: 0.15rem;
   }
