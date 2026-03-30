@@ -688,13 +688,10 @@ code {
   }
 
   .article-toc {
-    position: fixed;
-    right: 0.75rem;
-    bottom: 0.85rem;
+    position: static;
     order: -1;
-    z-index: 20;
     padding-top: 0;
-    width: min(calc(100vw - 1.5rem), 24rem);
+    width: auto;
   }
 
   .related-grid {
@@ -706,7 +703,12 @@ code {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    width: 100%;
+    position: fixed;
+    left: 50%;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 0.85rem);
+    z-index: 24;
+    transform: translateX(-50%);
+    width: min(calc(100vw - 1.5rem), 24rem);
     padding: 0.95rem 1.1rem;
     border: 1px solid var(--line);
     border-radius: 999px;
