@@ -11,42 +11,80 @@ const supportingPosts = posts.filter((post) => post.id !== featuredPost?.id);
 ---
 
 <BaseLayout>
-  <section class="section-block">
-    <div class="section-heading">
-      <p class="eyebrow">Archive</p>
-      <h1>All posts</h1>
+  <div class="home-layout">
+    <aside class="home-sidebar" aria-label="Homepage introduction">
+      <p class="eyebrow">Writing</p>
+      <h1>Essays on clarity, systems and AI-native companies.</h1>
       <p class="hero-copy">
-        A running set of essays on AI-native companies, starting with the core Clarity thesis and
-        followed by supporting examples and extensions.
+        A growing body of work around the Clarity thesis, with essays that explain the model and
+        examples that show how it changes real operating decisions.
       </p>
-    </div>
-    <div class="post-list">
+      <div class="home-sidebar-note">
+        <p class="card-meta">Start here</p>
+        <p>
+          Begin with the core thesis, then move through the supporting essays as the system gets
+          more concrete.
+        </p>
+      </div>
+    </aside>
+
+    <section class="home-main">
       {
-        posts.map((post) => (
-          <a class="post-card" href={`/posts/${post.slug}/`}>
-            <div>
-              <p class="card-meta">{post.data.featured ? 'Featured' : 'Essay'}</p>
-              <h3>{post.data.title}</h3>
-              <p>{post.data.description}</p>
+        featuredPost && (
+          <a class="home-feature" href={`/posts/${featuredPost.slug}/`}>
+            <div class="home-feature-copy">
+              <p class="card-meta">Featured essay</p>
+              <h2>{featuredPost.data.title}</h2>
+              <p>{featuredPost.data.description}</p>
             </div>
-            <time datetime={post.data.pubDate.toISOString()}>
-              {post.data.pubDate.toLocaleDateString('en-GB', {
+            <time datetime={featuredPost.data.pubDate.toISOString()}>
+              {featuredPost.data.pubDate.toLocaleDateString('en-GB', {
                 day: 'numeric',
                 month: 'short',
                 year: 'numeric'
               })}
             </time>
           </a>
-        ))
+        )
       }
-    </div>
-    {
-      supportingPosts.length === 0 && (
-        <p class="empty-state">
-          The archive starts with a single highlight essay. Supporting posts can be added under
-          <code>src/content/posts/</code>.
-        </p>
-      )
-    }
-  </section>
+
+      {
+        supportingPosts.length > 0 && (
+          <div class="home-section-heading">
+            <p class="eyebrow">Latest</p>
+            <h2>Recent posts</h2>
+          </div>
+        )
+      }
+
+      <div class="post-list">
+        {
+          supportingPosts.map((post) => (
+            <a class="post-card" href={`/posts/${post.slug}/`}>
+              <div>
+                <p class="card-meta">Essay</p>
+                <h3>{post.data.title}</h3>
+                <p>{post.data.description}</p>
+              </div>
+              <time datetime={post.data.pubDate.toISOString()}>
+                {post.data.pubDate.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'short',
+                  year: 'numeric'
+                })}
+              </time>
+            </a>
+          ))
+        }
+      </div>
+      {
+        supportingPosts.length === 0 && (
+          <p class="empty-state">
+            The collection currently starts with one foundation essay. Additional posts can be
+            added under <code>src/content/posts/</code>.
+          </p>
+        )
+      }
+    </section>
+  </div>
 </BaseLayout>
