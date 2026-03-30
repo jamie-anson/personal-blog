@@ -81,6 +81,8 @@ code {
 
 .page-shell > main {
   flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .site-header,
@@ -275,7 +277,8 @@ code {
   grid-template-columns: minmax(17rem, 23rem) minmax(0, 1fr);
   align-items: start;
   gap: 1.75rem;
-  padding-top: min(20vh, 11rem);
+  padding-top: min(10vh, 5.5rem);
+  flex: 1 0 auto;
 }
 
 .home-sidebar {
@@ -326,10 +329,10 @@ code {
 
 .home-section-label {
   margin: 0;
-  color: var(--muted);
+  color: rgba(98, 113, 99, 0.72);
   font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 450;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -458,7 +461,7 @@ code {
 
 .site-footer {
   padding: 2rem 0 0;
-  color: var(--muted);
+  color: rgba(98, 113, 99, 0.8);
   text-align: center;
 }
 
