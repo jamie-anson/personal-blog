@@ -6,7 +6,7 @@ featured: true
 draft: false
 ---
 
-Anyone can do anything now.
+**Anyone can do anything now.**
 
 AI has made execution fast and accessible.
 

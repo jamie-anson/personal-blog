@@ -8,8 +8,10 @@
   --accent: #4d7a4b;
   --accent-strong: #365f35;
   --accent-soft: #e3eddc;
+  --accent-wash: rgba(227, 237, 220, 0.62);
   --max-width: 72rem;
   --shadow: 0 20px 50px rgba(47, 68, 44, 0.08);
+  --shadow-soft: 0 24px 60px rgba(47, 68, 44, 0.12);
 }
 
 *,
@@ -108,19 +110,13 @@ code {
 }
 
 .site-nav a {
-  padding: 0.35rem 0;
+  padding: 0.35rem 0.2rem;
   border-radius: 999px;
   font-size: 1.05rem;
   color: var(--muted);
-}
-
-.site-nav a.active,
-.site-nav a:hover,
-.button-link:hover,
-.post-card:hover,
-.mini-card:hover {
-  background: var(--accent-strong);
-  color: #f6f7f0;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease;
 }
 
 .site-nav a.active,
@@ -216,7 +212,20 @@ code {
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--accent-soft);
-  transition: background-color 160ms ease, color 160ms ease;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.button-link:hover {
+  background: rgba(227, 237, 220, 0.9);
+  border-color: rgba(77, 122, 75, 0.2);
+  color: var(--accent-strong);
+  box-shadow: 0 10px 24px rgba(47, 68, 44, 0.08);
+  transform: translateY(-1px);
 }
 
 .feature-card {
@@ -233,6 +242,125 @@ code {
   margin-top: 1.5rem;
 }
 
+.home-layout {
+  display: grid;
+  grid-template-columns: minmax(15rem, 19rem) minmax(0, 1fr);
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.home-sidebar {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  padding-top: 1.25rem;
+}
+
+.home-sidebar h1 {
+  font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  margin: 0.4rem 0 1rem;
+  font-size: clamp(2.2rem, 4vw, 3.75rem);
+}
+
+.home-sidebar .hero-copy {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.home-sidebar-note {
+  margin-top: 1.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.home-sidebar-note p:last-child,
+.home-section-heading p:last-child {
+  margin-bottom: 0;
+}
+
+.home-sidebar-note p:last-child {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.home-main {
+  display: grid;
+  gap: 1rem;
+}
+
+.home-feature,
+.related-card {
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    color 160ms ease;
+}
+
+.home-feature {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 1.75rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(244, 247, 239, 0.92)),
+    var(--surface-strong);
+  box-shadow: var(--shadow);
+}
+
+.home-feature:hover,
+.mini-card:hover,
+.post-card:hover,
+.related-card:hover {
+  transform: translateY(-2px);
+  background: var(--accent-wash);
+  border-color: rgba(77, 122, 75, 0.22);
+  box-shadow: var(--shadow-soft);
+  color: inherit;
+}
+
+.home-feature-copy h2 {
+  font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  margin: 0.35rem 0 0;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+}
+
+.home-feature-copy p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.25rem;
+}
+
+.home-feature time {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.home-section-heading {
+  padding: 0.35rem 0 0.15rem;
+}
+
+.home-section-heading h2 {
+  margin: 0.35rem 0 0;
+  font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+}
+
 .mini-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 1.25rem;
@@ -244,12 +372,9 @@ code {
   transition:
     transform 160ms ease,
     background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
     color 160ms ease;
-}
-
-.mini-card:hover,
-.post-card:hover {
-  transform: translateY(-2px);
 }
 
 .post-list {
@@ -359,10 +484,15 @@ code {
 
 .article-meta {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
   color: var(--muted);
   font-size: 1.1875rem;
+}
+
+.article-meta-spacer {
+  flex: 1 1 auto;
 }
 
 .article-title-block {
@@ -373,24 +503,6 @@ code {
 .article-title-block .lede {
   margin: 0;
   max-width: 40rem;
-}
-
-.article-summary {
-  max-width: 42rem;
-  padding: 1rem 1.1rem;
-  border-left: 2px solid rgba(77, 122, 75, 0.35);
-  background: rgba(255, 253, 247, 0.5);
-}
-
-.article-summary p {
-  margin: 0;
-}
-
-.article-summary p:last-child {
-  margin-top: 0.35rem;
-  color: var(--muted);
-  font-size: 1.2rem;
-  line-height: 1.55;
 }
 
 .article-body {
@@ -426,16 +538,6 @@ code {
 
 .related-card {
   padding: 1.25rem;
-  transition:
-    transform 160ms ease,
-    background-color 160ms ease,
-    color 160ms ease;
-}
-
-.related-card:hover {
-  transform: translateY(-2px);
-  background: var(--accent-strong);
-  color: #f6f7f0;
 }
 
 .related-card h3 {
@@ -517,6 +619,21 @@ code {
     grid-template-columns: 1fr;
   }
 
+  .home-layout,
+  .post-card {
+    grid-template-columns: 1fr;
+  }
+
+  .home-layout {
+    gap: 1rem;
+  }
+
+  .home-sidebar {
+    position: static;
+    padding-top: 0;
+  }
+
+  .home-feature,
   .post-card {
     flex-direction: column;
     align-items: flex-start;
@@ -561,6 +678,10 @@ code {
   .feature-card,
   .section-block,
   .article-shell {
+    padding: 1.15rem;
+  }
+
+  .home-feature {
     padding: 1.15rem;
   }
 }

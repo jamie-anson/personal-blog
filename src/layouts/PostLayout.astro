@@ -6,7 +6,6 @@ interface Props {
   description: string;
   pubDate: Date;
   updatedDate?: Date;
-  featured?: boolean;
   readingTime?: number;
   relatedPosts?: Array<{
     slug: string;
@@ -27,7 +26,6 @@ const {
   description,
   pubDate,
   updatedDate,
-  featured = false,
   readingTime,
   relatedPosts = [],
   headings = []
@@ -79,6 +77,8 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
       <header class="article-header">
         <div class="article-title-block">
           <div class="article-meta">
+            {readingTime && <span>{readingTime} min read</span>}
+            <span class="article-meta-spacer" aria-hidden="true"></span>
             <time datetime={pubDate.toISOString()}>
               {pubDate.toLocaleDateString('en-GB', {
                 day: 'numeric',
@@ -86,7 +86,6 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
                 year: 'numeric'
               })}
             </time>
-            {readingTime && <span>{readingTime} min read</span>}
             {
               updatedDate && (
                 <span>
@@ -103,17 +102,6 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
           <h1>{title}</h1>
           <p class="lede">{description}</p>
         </div>
-        {
-          featured && (
-            <div class="article-summary">
-              <p class="card-meta">In short</p>
-              <p>
-                Clarity is a system for replacing role-based coordination with explicit ownership of
-                outcomes, so AI expands responsibility instead of flattening people into operators.
-              </p>
-            </div>
-          )
-        }
       </header>
       <div class="article-body">
         <slot />
