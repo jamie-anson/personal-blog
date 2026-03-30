@@ -8,7 +8,7 @@ draft: false
 
 ## The Clarity Method explained through a restaurant
 
-AI is coming for the kitchen, not slowly or politely, but directly, and this time it can actually cook. Companies are looking at systems like the Moley Robotic Kitchen or Robby AI and seeing one clear benefit: cost reduction. A robot doesn't call in sick, doesn't need training, and produces the exact same dish every time, so the decision seems obvious: replace the chef.
+AI is coming for the kitchen, not slowly or politely, but directly, and this time it can actually cook. Companies are looking at systems like the [Moley Robotic Kitchen](https://www.moley.com/) or [Robby AI](https://nextrobot.com/robby) and seeing one clear benefit: cost reduction. A robot doesn't call in sick, doesn't need training, and produces the exact same dish every time, so the decision seems obvious: replace the chef.
 
 ## What usually happens next
 
