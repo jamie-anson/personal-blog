@@ -296,6 +296,11 @@ code {
   line-height: 1.45;
 }
 
+.home-sidebar-mobile-tail {
+  display: none;
+  color: rgba(98, 113, 99, 0.8);
+}
+
 .home-sidebar-note {
   margin-top: 1.75rem;
   padding-top: 1rem;
@@ -304,7 +309,7 @@ code {
 
 .home-sidebar-note p:last-child {
   margin: 0;
-  color: var(--muted);
+  color: rgba(98, 113, 99, 0.8);
   font-size: 1.08rem;
   line-height: 1.7;
 }
@@ -312,6 +317,21 @@ code {
 .home-main {
   display: grid;
   gap: 1rem;
+}
+
+.home-section {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.home-section-label {
+  margin: 0;
+  color: var(--muted);
+  font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .home-divider {
@@ -338,9 +358,7 @@ code {
   padding: 1.5rem;
   border: 1px solid var(--line);
   border-radius: 1.75rem;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(244, 247, 239, 0.92)),
-    var(--surface-strong);
+  background: var(--surface);
   box-shadow: var(--shadow);
 }
 
@@ -373,7 +391,9 @@ code {
 }
 
 .home-feature time {
-  color: var(--muted);
+  color: rgba(98, 113, 99, 0.5);
+  font-size: 0.9rem;
+  line-height: 1.45;
   white-space: nowrap;
 }
 
@@ -402,6 +422,13 @@ code {
   align-items: flex-end;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.post-card time {
+  color: rgba(98, 113, 99, 0.5);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  white-space: nowrap;
 }
 
 .home-priority-card {
@@ -692,7 +719,7 @@ code {
   }
 
   .home-layout {
-    gap: 1rem;
+    gap: 3.5rem;
     padding-top: 0;
   }
 
@@ -812,6 +839,10 @@ code {
     width: min(calc(100% - 1rem), var(--max-width));
   }
 
+  .home-sidebar {
+    padding-inline: 0.15rem;
+  }
+
   .site-header {
     padding: 1rem 0;
   }
@@ -851,6 +882,14 @@ code {
 
   .home-sidebar .site-subheading {
     font-size: 1.08rem;
+  }
+
+  .home-sidebar-mobile-tail {
+    display: inline;
+  }
+
+  .home-sidebar-note {
+    display: none;
   }
 
   .home-feature-copy h2 {
