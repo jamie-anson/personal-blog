@@ -46,6 +46,17 @@ a {
   text-decoration: none;
 }
 
+.article-body a {
+  color: var(--accent-strong);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.12em;
+}
+
+.article-body a:hover {
+  color: var(--accent);
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -537,6 +548,8 @@ code {
 
 .article-header h1 {
   max-width: 16ch;
+  font-size: clamp(2.4rem, 4.4vw, 4rem);
+  margin: 0.45rem 0 1.1rem;
 }
 
 .article-title-block .lede {
