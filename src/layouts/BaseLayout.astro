@@ -38,15 +38,19 @@ const canonical = new URL(Astro.url.pathname, site.url);
           <p class="site-subheading">
             Clarity is a system for building AI-native companies, created by Jamie Anson.
           </p>
-          <nav class="site-nav" aria-label="Primary">
-            {
-              site.nav.map((item) => (
-                <a href={item.href} class={Astro.url.pathname === item.href ? 'active' : ''}>
-                  {item.label}
-                </a>
-              ))
-            }
-          </nav>
+          {
+            site.nav.length > 0 && (
+              <nav class="site-nav" aria-label="Primary">
+                {
+                  site.nav.map((item) => (
+                    <a href={item.href} class={Astro.url.pathname === item.href ? 'active' : ''}>
+                      {item.label}
+                    </a>
+                  ))
+                }
+              </nav>
+            )
+          }
         </div>
       </header>
       <main>
