@@ -72,6 +72,12 @@ code {
   padding: 0.9rem 1rem;
 }
 
+.site-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
 .brand,
 .eyebrow,
 .feature-label,
@@ -87,6 +93,13 @@ code {
   color: var(--accent);
   font-weight: 700;
   font-size: 1rem;
+}
+
+.site-subheading {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.35;
 }
 
 .site-nav {
@@ -482,8 +495,13 @@ code {
   }
 
   .site-header {
-    border-radius: 1.25rem;
+    align-items: flex-start;
+    flex-direction: column;
     padding: 1rem;
+  }
+
+  .site-nav {
+    padding-top: 0.25rem;
   }
 
   .hero {

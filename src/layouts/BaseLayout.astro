@@ -33,7 +33,12 @@ const canonical = new URL(Astro.url.pathname, site.url);
   <body>
     <div class="page-shell">
       <header class="site-header">
-        <a class="brand" href="/">{site.name}</a>
+        <div class="site-intro">
+          <a class="brand" href="/">{site.name}</a>
+          <p class="site-subheading">
+            Clarity is a system for building AI-native companies, created by Jamie Anson.
+          </p>
+        </div>
         <nav class="site-nav" aria-label="Primary">
           {
             site.nav.map((item) => (
@@ -48,7 +53,7 @@ const canonical = new URL(Astro.url.pathname, site.url);
         <slot />
       </main>
       <footer class="site-footer">
-        <p>Built with Astro for fast, static delivery.</p>
+        <p>© Jamie Anson 2026. Clarity by Jamie Anson. Shared openly. Attribution required.</p>
       </footer>
     </div>
   </body>
