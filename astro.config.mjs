@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://personal-blog.freelancejamie.workers.dev',
+  site: 'https://personal-blog-wc2.pages.dev',
   output: 'static',
   prefetch: false,
   markdown: {
