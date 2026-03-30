@@ -7,35 +7,33 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
-const supportingPosts = posts.filter((post) => post.id !== featuredPost?.id);
+const firstPost = posts.find((post) => post.slug === 'restaurant');
+const secondPost = posts.find((post) => post.slug === 'clarity');
+const remainingPosts = posts.filter(
+  (post) => post.id !== firstPost?.id && post.id !== secondPost?.id
+);
 ---
 
 <BaseLayout hideHeader={true}>
   <div class="home-layout">
     <aside class="home-sidebar" aria-label="Homepage introduction">
       <a class="brand" href="/">{site.name}</a>
-      <p class="site-subheading">
-        Clarity is a system for building AI-native companies, created by Jamie Anson.
-      </p>
+      <p class="site-subheading">Clarity is a system for building AI-native companies.</p>
       <div class="home-sidebar-note">
-        <p>
-          Begin with the core thesis, then move through the supporting essays as the system gets
-          more concrete.
-        </p>
+        <p>Created by Jamie Anson.</p>
       </div>
     </aside>
 
     <section class="home-main">
       {
-        featuredPost && (
-          <a class="home-feature" href={`/posts/${featuredPost.slug}/`}>
-            <div class="home-feature-copy">
-              <h2>{featuredPost.data.title}</h2>
-              <p>{featuredPost.data.description}</p>
+        firstPost && (
+          <a class="post-card home-priority-card" href={`/posts/${firstPost.slug}/`}>
+            <div>
+              <h3>{firstPost.data.title}</h3>
+              <p>{firstPost.data.description}</p>
             </div>
-            <time datetime={featuredPost.data.pubDate.toISOString()}>
-              {featuredPost.data.pubDate.toLocaleDateString('en-GB', {
+            <time datetime={firstPost.data.pubDate.toISOString()}>
+              {firstPost.data.pubDate.toLocaleDateString('en-GB', {
                 day: 'numeric',
                 month: 'short',
                 year: 'numeric'
@@ -45,9 +43,35 @@ const supportingPosts = posts.filter((post) => post.id !== featuredPost?.id);
         )
       }
 
+      {
+        firstPost && secondPost && <div class="home-divider" aria-hidden="true"></div>
+      }
+
+      {
+        secondPost && (
+          <a class="home-feature" href={`/posts/${secondPost.slug}/`}>
+            <div class="home-feature-copy">
+              <h2>{secondPost.data.title}</h2>
+              <p>{secondPost.data.description}</p>
+            </div>
+            <time datetime={secondPost.data.pubDate.toISOString()}>
+              {secondPost.data.pubDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric'
+              })}
+            </time>
+          </a>
+        )
+      }
+
+      {
+        secondPost && remainingPosts.length > 0 && <div class="home-divider" aria-hidden="true"></div>
+      }
+
       <div class="post-list">
         {
-          supportingPosts.map((post) => (
+          remainingPosts.map((post) => (
             <a class="post-card" href={`/posts/${post.slug}/`}>
               <div>
                 <h3>{post.data.title}</h3>
@@ -65,7 +89,7 @@ const supportingPosts = posts.filter((post) => post.id !== featuredPost?.id);
         }
       </div>
       {
-        supportingPosts.length === 0 && (
+        !firstPost && !secondPost && remainingPosts.length === 0 && (
           <p class="empty-state">
             The collection currently starts with one foundation essay. Additional posts can be
             added under <code>src/content/posts/</code>.

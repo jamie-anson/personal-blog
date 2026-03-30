@@ -314,6 +314,12 @@ code {
   gap: 1rem;
 }
 
+.home-divider {
+  height: 1px;
+  margin: 0.15rem 0;
+  background: rgba(98, 113, 99, 0.2);
+}
+
 .home-feature,
 .related-card {
   transition:
@@ -396,6 +402,10 @@ code {
   align-items: flex-end;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.home-priority-card {
+  margin-top: 0;
 }
 
 .post-card h2,
