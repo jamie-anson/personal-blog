@@ -7,42 +7,74 @@ interface Props {
   pubDate: Date;
   updatedDate?: Date;
   featured?: boolean;
+  headings?: Array<{
+    depth: number;
+    slug: string;
+    text: string;
+  }>;
 }
 
-const { title, description, pubDate, updatedDate, featured = false } = Astro.props;
+const { title, description, pubDate, updatedDate, featured = false, headings = [] } = Astro.props;
+const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
 ---
 
 <BaseLayout title={`${title} | Essays`} description={description}>
-  <article class="article-shell">
-    <a class="eyebrow-link" href="/posts/">All posts</a>
-    <header class="article-header">
-      <p class="eyebrow">{featured ? 'Highlight essay' : 'Essay'}</p>
-      <h1>{title}</h1>
-      <p class="lede">{description}</p>
-      <div class="article-meta">
-        <time datetime={pubDate.toISOString()}>
-          {pubDate.toLocaleDateString('en-GB', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-          })}
-        </time>
-        {
-          updatedDate && (
-            <span>
-              Updated{' '}
-              {updatedDate.toLocaleDateString('en-GB', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric'
-              })}
-            </span>
-          )
-        }
+  <div class="article-layout">
+    {
+      tocHeadings.length > 0 && (
+        <aside class="article-toc" aria-label="On this page">
+          <div class="toc-card">
+            <p class="toc-title">On this page</p>
+            <nav class="toc-nav">
+              {
+                tocHeadings.map((heading) => (
+                  <a
+                    href={`#${heading.slug}`}
+                    class:list={[
+                      'toc-link',
+                      heading.depth === 3 && 'toc-link-nested'
+                    ]}
+                  >
+                    {heading.text}
+                  </a>
+                ))
+              }
+            </nav>
+          </div>
+        </aside>
+      )
+    }
+    <article class="article-shell">
+      <a class="eyebrow-link" href="/posts/">All posts</a>
+      <header class="article-header">
+        <p class="eyebrow">{featured ? 'Highlight essay' : 'Essay'}</p>
+        <h1>{title}</h1>
+        <p class="lede">{description}</p>
+        <div class="article-meta">
+          <time datetime={pubDate.toISOString()}>
+            {pubDate.toLocaleDateString('en-GB', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric'
+            })}
+          </time>
+          {
+            updatedDate && (
+              <span>
+                Updated{' '}
+                {updatedDate.toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric'
+                })}
+              </span>
+            )
+          }
+        </div>
+      </header>
+      <div class="article-body">
+        <slot />
       </div>
-    </header>
-    <div class="article-body">
-      <slot />
-    </div>
-  </article>
+    </article>
+  </div>
 </BaseLayout>

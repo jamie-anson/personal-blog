@@ -1,9 +1,9 @@
 export const site = {
-  name: 'Jammie',
-  title: 'Jammie on AI-native companies',
+  name: "Jamie Anson's blog",
+  title: "Jamie Anson's blog",
   description:
     'Essays on AI-native companies, operating systems for teams, and the structures that emerge when execution becomes abundant.',
-  url: 'https://example.com',
+  url: 'https://personal-blog.freelancejamie.workers.dev',
   nav: [
     { href: '/', label: 'Home' },
     { href: '/posts/', label: 'Posts' }

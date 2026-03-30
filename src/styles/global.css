@@ -1,13 +1,15 @@
 :root {
-  --bg: #f6f3ee;
-  --surface: rgba(255, 255, 255, 0.72);
-  --surface-strong: #fffdfa;
-  --line: rgba(40, 31, 23, 0.12);
-  --text: #1f1a17;
-  --muted: #64584d;
-  --accent: #20160f;
+  --bg: #f4f3ea;
+  --surface: rgba(255, 253, 247, 0.82);
+  --surface-strong: #fcfbf5;
+  --line: rgba(68, 90, 63, 0.14);
+  --text: #223128;
+  --muted: #627163;
+  --accent: #4d7a4b;
+  --accent-strong: #365f35;
+  --accent-soft: #e3eddc;
   --max-width: 72rem;
-  --shadow: 0 20px 50px rgba(33, 24, 18, 0.08);
+  --shadow: 0 20px 50px rgba(47, 68, 44, 0.08);
 }
 
 *,
@@ -23,10 +25,10 @@ html {
 body {
   margin: 0;
   color: var(--text);
-  font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
+  font-family: Iowan Old Style, Palatino Linotype, Book Antiqua, Georgia, serif;
   background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.92), rgba(246, 243, 238, 0) 35%),
-    linear-gradient(180deg, #f8f5f0 0%, #f6f3ee 100%);
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.9), rgba(244, 243, 234, 0) 38%),
+    linear-gradient(180deg, #f7f6ee 0%, #f1f0e4 100%);
   line-height: 1.7;
 }
 
@@ -70,7 +72,7 @@ code {
   padding: 0.9rem 1rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 253, 250, 0.72);
+  background: rgba(252, 251, 245, 0.78);
   backdrop-filter: blur(14px);
   position: sticky;
   top: 1rem;
@@ -91,6 +93,7 @@ code {
 .brand {
   color: var(--accent);
   font-weight: 700;
+  font-size: 1rem;
 }
 
 .site-nav {
@@ -109,8 +112,8 @@ code {
 .button-link:hover,
 .post-card:hover,
 .mini-card:hover {
-  background: var(--accent);
-  color: #f9f6f1;
+  background: var(--accent-strong);
+  color: #f6f7f0;
 }
 
 .hero {
@@ -126,7 +129,7 @@ code {
 .post-card h3,
 .mini-card h3,
 .article-body :where(h2, h3, h4) {
-  font-family: Iowan Old Style, Palatino Linotype, Book Antiqua, Georgia, serif;
+  font-family: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 0.95;
@@ -168,7 +171,8 @@ code {
 .mini-card,
 .post-card,
 .article-shell,
-.section-block {
+.section-block,
+.toc-card {
   border: 1px solid var(--line);
   border-radius: 1.75rem;
   background: var(--surface);
@@ -198,6 +202,7 @@ code {
   padding: 0.8rem 1.05rem;
   border: 1px solid var(--line);
   border-radius: 999px;
+  background: var(--accent-soft);
   transition: background-color 160ms ease, color 160ms ease;
 }
 
@@ -207,7 +212,7 @@ code {
   justify-content: flex-end;
   min-height: 100%;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(239, 227, 213, 0.9)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(227, 237, 220, 0.92)),
     var(--surface-strong);
 }
 
@@ -268,6 +273,68 @@ code {
   padding: 2rem;
 }
 
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(14rem, 18rem) minmax(0, 52rem);
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.article-toc {
+  position: sticky;
+  top: 6.75rem;
+}
+
+.toc-card {
+  padding: 1.25rem 1rem;
+}
+
+.toc-title {
+  margin: 0 0 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.toc-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.toc-link {
+  display: block;
+  padding: 0.3rem 0.2rem 0.3rem 1rem;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.4;
+  border-left: 2px solid transparent;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.toc-link::before {
+  content: '';
+  display: inline-block;
+  width: 0.65rem;
+  height: 1px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  background: rgba(77, 122, 75, 0.45);
+}
+
+.toc-link:hover {
+  color: var(--accent-strong);
+  border-left-color: rgba(77, 122, 75, 0.35);
+  transform: translateX(2px);
+}
+
+.toc-link-nested {
+  padding-left: 1.95rem;
+  font-size: 0.92rem;
+}
+
 .article-header {
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--line);
@@ -304,7 +371,7 @@ code {
 .article-body li,
 .article-body ol {
   font-size: 1.08rem;
-  color: #2c231d;
+  color: #304036;
 }
 
 .article-body ul,
@@ -355,6 +422,19 @@ code {
   .post-card {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .article-toc {
+    position: static;
+    order: -1;
+  }
+
+  .toc-card {
+    padding: 1rem;
   }
 }
 
