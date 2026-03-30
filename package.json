@@ -7,10 +7,16 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "check": "astro check"
+    "preview": "pnpm run build && wrangler dev",
+    "check": "astro check",
+    "deploy": "pnpm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "12",
     "astro": "^5.6.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.78.0"
   }
 }
