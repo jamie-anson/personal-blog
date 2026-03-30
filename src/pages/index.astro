@@ -11,65 +11,14 @@ const supportingPosts = posts.filter((post) => post.id !== featuredPost?.id);
 ---
 
 <BaseLayout>
-  <section class="hero">
-    <p class="eyebrow">Essays on AI-native companies</p>
-    <h1>
-      A minimal writing space for thinking clearly about how companies change when execution is no
-      longer scarce.
-    </h1>
-    <p class="hero-copy">
-      The highlight essay introduces the system. Everything after that exists to pressure-test,
-      extend, and operationalize the idea.
-    </p>
-  </section>
-
-  {
-    featuredPost && (
-      <section class="feature-grid">
-        <div class="feature-copy">
-          <p class="eyebrow">Highlight post</p>
-          <h2>{featuredPost.data.title}</h2>
-          <p>{featuredPost.data.description}</p>
-          <a class="button-link" href={`/posts/${featuredPost.slug}/`}>
-            Read the essay
-          </a>
-        </div>
-        <div class="feature-card">
-          <p class="feature-label">Thesis</p>
-          <p>
-            AI removes execution constraints. The remaining bottleneck is organizational clarity:
-            defining outcomes well enough for humans and agents to iterate toward them.
-          </p>
-        </div>
-      </section>
-    )
-  }
-
   <section class="section-block">
     <div class="section-heading">
-      <p class="eyebrow">What this blog is for</p>
-      <h2>One thesis, then a body of evidence.</h2>
-    </div>
-    <div class="mini-grid">
-      <article class="mini-card">
-        <h3>Start with the model</h3>
-        <p>The featured piece defines the Clarity Method and its fit for AI-native organizations.</p>
-      </article>
-      <article class="mini-card">
-        <h3>Then add support</h3>
-        <p>Future posts can stay narrow: case studies, operating patterns, objections, and tools.</p>
-      </article>
-      <article class="mini-card">
-        <h3>Keep it fast</h3>
-        <p>No client-side framework, no unnecessary scripts, and content-first pages for strong load times.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section-block">
-    <div class="section-heading">
-      <p class="eyebrow">Posts</p>
-      <h2>Writing archive</h2>
+      <p class="eyebrow">Archive</p>
+      <h1>All posts</h1>
+      <p class="hero-copy">
+        A running set of essays on AI-native companies, starting with the core Clarity thesis and
+        followed by supporting examples and extensions.
+      </p>
     </div>
     <div class="post-list">
       {
