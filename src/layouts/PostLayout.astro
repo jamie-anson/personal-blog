@@ -77,35 +77,31 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
     }
     <article class="article-shell">
       <header class="article-header">
-        <div class="article-utility">
-          <a class="eyebrow-link" href="/">All posts</a>
-          <p class="eyebrow">{featured ? 'Highlight essay' : 'Essay'}</p>
-        </div>
         <div class="article-title-block">
+          <div class="article-meta">
+            <time datetime={pubDate.toISOString()}>
+              {pubDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+              })}
+            </time>
+            {readingTime && <span>{readingTime} min read</span>}
+            {
+              updatedDate && (
+                <span>
+                  Updated{' '}
+                  {updatedDate.toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                  })}
+                </span>
+              )
+            }
+          </div>
           <h1>{title}</h1>
           <p class="lede">{description}</p>
-        </div>
-        <div class="article-meta">
-          <time datetime={pubDate.toISOString()}>
-            {pubDate.toLocaleDateString('en-GB', {
-              day: 'numeric',
-              month: 'long',
-              year: 'numeric'
-            })}
-          </time>
-          {readingTime && <span>{readingTime} min read</span>}
-          {
-            updatedDate && (
-              <span>
-                Updated{' '}
-                {updatedDate.toLocaleDateString('en-GB', {
-                  day: 'numeric',
-                  month: 'long',
-                  year: 'numeric'
-                })}
-              </span>
-            )
-          }
         </div>
         {
           featured && (

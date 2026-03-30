@@ -347,19 +347,8 @@ code {
 .article-header {
   display: grid;
   gap: 1rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 3.5rem;
   border-bottom: 1px solid var(--line);
-}
-
-.article-utility {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.eyebrow-link {
-  display: inline-flex;
 }
 
 .article-meta {
@@ -372,7 +361,7 @@ code {
 
 .article-title-block {
   display: grid;
-  gap: 0.5rem;
+  gap: 0.9rem;
 }
 
 .article-title-block .lede {
@@ -399,7 +388,7 @@ code {
 }
 
 .article-body {
-  padding-top: 1rem;
+  padding-top: 2.25rem;
 }
 
 .article-footer {
