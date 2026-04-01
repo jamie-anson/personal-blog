@@ -1,12 +1,10 @@
 ---
 title: The Restaurant That Didn't Fire Its Chef
-description: A restaurant example of how the Clarity Method changes AI from role replacement into outcome ownership.
+description: Clarity explained through a restaurant.
 pubDate: 2026-03-30
 featured: false
 draft: false
 ---
-
-Clarity explained through a restaurant.
 
 AI is coming for the kitchen. Not slowly or politely, but directly. And this time, it can actually cook.
 

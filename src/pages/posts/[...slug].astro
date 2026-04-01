@@ -18,7 +18,7 @@ export async function getStaticPaths() {
     params: { slug: post.slug },
     props: {
       post,
-      relatedPosts: posts.filter((candidate) => candidate.id !== post.id).slice(0, 2)
+      relatedPosts: posts.filter((candidate) => candidate.id !== post.id)
     }
   }));
 }
