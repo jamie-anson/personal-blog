@@ -768,10 +768,12 @@ code {
 
 .experimental-wrap-layout--right .experimental-wrap-layout__figure--enhanced {
   right: var(--experimental-figure-edge-margin);
+  margin-right: 0;
 }
 
 .experimental-wrap-layout--left .experimental-wrap-layout__figure--enhanced {
   left: var(--experimental-figure-edge-margin);
+  margin-left: 0;
 }
 
 .experimental-wrap-layout__line-layer {
