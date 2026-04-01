@@ -12,9 +12,13 @@ AI is coming for the kitchen. Not slowly or politely, but directly. And this tim
 
 Companies are looking at systems like the [Moley Robotic Kitchen](https://www.moley.com/) or [Robby AI](https://nextrobot.com/robby) and seeing one clear benefit: cost reduction. A robot doesn't call in sick, doesn't need training, and produces the same dish every time. From a distance, the decision feels obvious. Replace the chef.
 
-![Robby by Next Robot](/images/posts/the-restaurant-that-didnt-fire-its-chef/robby-next-robot.jpeg)
-
-_Robby by nextrobot.com_
+<figure>
+  <img
+    src="/images/posts/the-restaurant-that-didnt-fire-its-chef/robby-next-robot.jpeg"
+    alt="Robby by Next Robot"
+  />
+  <figcaption>Robby by nextrobot.com</figcaption>
+</figure>
 
 ## What usually happens next
 

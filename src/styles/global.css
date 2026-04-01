@@ -683,6 +683,25 @@ code {
   color: var(--muted);
 }
 
+.article-body figure {
+  margin: 1.6rem 0 2rem;
+}
+
+.article-body figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+}
+
+.article-body figcaption {
+  margin-top: 0.8rem;
+  color: rgba(98, 113, 99, 0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
 .experimental-wrap-layout {
   --experimental-figure-gap: 1.75rem;
   --experimental-min-readable-measure: 320px;
