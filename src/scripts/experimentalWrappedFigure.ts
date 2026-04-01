@@ -150,6 +150,8 @@ const renderWrappedLayout = async (root: HTMLElement) => {
       span.style.top = `${y}px`;
       span.style.left = overlapsFigure && isLeftAlignedFigure ? `${figureRect.width + figureGap}px` : '0px';
       span.style.width = `${maxWidth}px`;
+      span.style.maxWidth = `${maxWidth}px`;
+      span.style.overflow = 'hidden';
       span.style.color = textColor;
       spans.push(span);
 
