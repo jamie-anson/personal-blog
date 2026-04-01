@@ -22,9 +22,9 @@ That outcome touches everything. Food quality, speed of service, attentiveness, 
 The system still works. But improvement depends on alignment across parts, rather than clarity of outcome.
 
 
-## The Clarity Method
+## Clarity
 
-The Clarity Method does not replace this structure. It builds on top of it.
+Clarity does not replace this structure. It builds on top of it.
 
 Instead of organising only around roles, it introduces three things that sit across the work: seams, specs and sections.
 
@@ -52,7 +52,7 @@ The work is still distributed, but the outcome is no longer vague.
 
 ## Roles, in practice
 
-The Clarity Method does not introduce new job titles. It reveals how people already contribute when the outcome is clear.
+Clarity does not introduce new job titles. It reveals how people already contribute when the outcome is clear.
 
 In the restaurant, the Head Chef acts as the Artist. They take a belief, that faster and more attentive service will bring guests back, and turn it into a contract. They define what success looks like and accept the consequence if that definition is wrong.
 
@@ -100,7 +100,7 @@ For that to work, two things must exist.
 
 The outcome must be defined as a contract, and the environment must allow continuous adjustment.
 
-The Clarity Method provides both.
+Clarity provides both.
 
 Seams define what success looks like, and sections provide the space where work, human or AI, can move towards it and improve over time. AI is no longer guessing what “good” means.
 
@@ -126,6 +126,6 @@ Now execution is abundant.
 
 Clarity is what determines whether that execution produces something meaningful.
 
-The Clarity Method does not ask companies to rebuild themselves. It gives them a way to make outcomes visible, align work around them, and improve continuously.
+Clarity does not ask companies to rebuild themselves. It gives them a way to make outcomes visible, align work around them, and improve continuously.
 
 When anyone can do anything, this is what starts to matter.
