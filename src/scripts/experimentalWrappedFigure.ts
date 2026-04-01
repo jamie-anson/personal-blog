@@ -100,12 +100,16 @@ const renderWrappedLayout = async (root: HTMLElement) => {
   const rootWidth = root.getBoundingClientRect().width;
   const figureRect = figure.getBoundingClientRect();
   const figureGap = getPxValue(rootStyle.getPropertyValue('--experimental-figure-gap'), 28);
+  const figureEdgeMargin = getPxValue(
+    rootStyle.getPropertyValue('--experimental-figure-edge-margin'),
+    figureGap
+  );
   const minReadableMeasure = getPxValue(rootStyle.getPropertyValue('--experimental-min-readable-measure'), 320);
   const enhancementBreakpoint = getPxValue(
     rootStyle.getPropertyValue('--experimental-enhancement-breakpoint'),
     940
   );
-  const fullWidth = rootWidth;
+  const fullWidth = rootWidth - figureEdgeMargin;
   const wrappedWidth = fullWidth - figureRect.width - figureGap;
 
   if (window.innerWidth < enhancementBreakpoint || wrappedWidth < minReadableMeasure) {
