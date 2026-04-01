@@ -1,4 +1,15 @@
-export const site = {
+type SiteNavItem = {
+  href: string;
+  label: string;
+};
+
+export const site: {
+  name: string;
+  title: string;
+  description: string;
+  url: string;
+  nav: SiteNavItem[];
+} = {
   name: 'Bringing Clarity',
   title: 'Bringing Clarity',
   description:

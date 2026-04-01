@@ -1,0 +1,54 @@
+---
+interface Props {
+  imageSrc: string;
+  imageAlt: string;
+  caption?: string;
+  imageSide?: 'left' | 'right';
+  widthPreset?: 'narrow' | 'medium' | 'wide';
+  paragraphs: string[];
+}
+
+const {
+  imageSrc,
+  imageAlt,
+  caption,
+  imageSide = 'right',
+  widthPreset = 'medium',
+  paragraphs
+} = Astro.props;
+---
+
+<section
+  class:list={[
+    'experimental-wrap-layout',
+    `experimental-wrap-layout--${imageSide}`,
+    `experimental-wrap-layout--${widthPreset}`
+  ]}
+  data-experimental-wrap-root
+>
+  <div class="experimental-wrap-layout__fallback" data-wrap-fallback>
+    <figure class="experimental-wrap-layout__figure" data-wrap-figure>
+      <img src={imageSrc} alt={imageAlt} loading="eager" decoding="async" />
+      {caption && <figcaption>{caption}</figcaption>}
+    </figure>
+    <div class="experimental-wrap-layout__copy" data-wrap-copy>
+      {
+        paragraphs.map((paragraph) => (
+          <p data-wrap-paragraph>{paragraph}</p>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="experimental-wrap-layout__enhanced" data-wrap-enhanced hidden aria-hidden="true">
+    <figure class="experimental-wrap-layout__figure experimental-wrap-layout__figure--enhanced">
+      <img src={imageSrc} alt="" loading="eager" decoding="async" />
+      {caption && <figcaption>{caption}</figcaption>}
+    </figure>
+    <div class="experimental-wrap-layout__line-layer" data-wrap-lines></div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/experimentalWrappedFigure';
+</script>

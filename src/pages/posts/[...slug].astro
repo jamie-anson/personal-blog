@@ -1,6 +1,15 @@
 ---
 import { getCollection, render } from 'astro:content';
+import ExperimentalWrappedFigure from '../../components/ExperimentalWrappedFigure.astro';
 import PostLayout from '../../layouts/PostLayout.astro';
+
+const EXPERIMENTAL_WRAPPED_FIGURE_POSTS = new Set(['clarity']);
+const CLARITY_INTRO_PARAGRAPHS = [
+  'Anyone can do anything now.',
+  'AI has made execution fast and accessible.',
+  'A single builder can now design, build, market and analyse in a single day. Not because they are exceptional, but because the tools extend what anyone can do.',
+  'The constraint is no longer skill. The constraint is clarity.'
+];
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
@@ -17,6 +26,7 @@ export async function getStaticPaths() {
 const { post, relatedPosts } = Astro.props;
 const { Content, headings } = await render(post);
 const readingTime = Math.max(1, Math.round(post.body.split(/\s+/).filter(Boolean).length / 220));
+const isWrappedFigurePilot = EXPERIMENTAL_WRAPPED_FIGURE_POSTS.has(post.slug);
 ---
 
 <PostLayout
@@ -28,5 +38,15 @@ const readingTime = Math.max(1, Math.round(post.body.split(/\s+/).filter(Boolean
   relatedPosts={relatedPosts}
   headings={headings}
 >
+  {
+    isWrappedFigurePilot && (
+      <ExperimentalWrappedFigure
+        imageSrc="/clarity-figure.svg"
+        imageAlt="A structured diagram showing belief, seam, spec, and section arranged as a vertical operating loop."
+        caption="A simple operating loop: belief becomes seam, seam drives spec, spec shapes section."
+        paragraphs={CLARITY_INTRO_PARAGRAPHS}
+      />
+    )
+  }
   <Content />
 </PostLayout>

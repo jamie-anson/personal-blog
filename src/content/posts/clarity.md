@@ -6,16 +6,6 @@ featured: true
 draft: false
 ---
 
-**Anyone can do anything now.**
-
-AI has made execution fast and accessible.
-
-A single builder can now design, build, market and analyse in a single day. Not because they are exceptional, but because the tools extend what anyone can do.
-
-The constraint is no longer skill.
-
-The constraint is clarity.
-
 ## The problem
 
 Companies are still structured for a world where execution was scarce.

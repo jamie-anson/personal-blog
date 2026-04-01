@@ -683,6 +683,97 @@ code {
   color: var(--muted);
 }
 
+.experimental-wrap-layout {
+  --experimental-figure-gap: 1.75rem;
+  --experimental-min-readable-measure: 320px;
+  --experimental-enhancement-breakpoint: 940px;
+  --experimental-figure-width: clamp(15rem, 26vw, 18rem);
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.experimental-wrap-layout--narrow {
+  --experimental-figure-width: clamp(13rem, 22vw, 15rem);
+}
+
+.experimental-wrap-layout--medium {
+  --experimental-figure-width: clamp(15rem, 26vw, 18rem);
+}
+
+.experimental-wrap-layout--wide {
+  --experimental-figure-width: clamp(17rem, 30vw, 20rem);
+}
+
+.experimental-wrap-layout__fallback {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.experimental-wrap-layout__figure {
+  width: min(100%, var(--experimental-figure-width));
+  margin: 0;
+}
+
+.experimental-wrap-layout--right .experimental-wrap-layout__figure {
+  justify-self: end;
+}
+
+.experimental-wrap-layout__figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(238, 241, 229, 0.92));
+  box-shadow: var(--shadow);
+}
+
+.experimental-wrap-layout__figure figcaption {
+  width: min(100%, 19rem);
+  margin-top: 0.8rem;
+  color: rgba(98, 113, 99, 0.88);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.experimental-wrap-layout__copy p {
+  margin: 0;
+}
+
+.experimental-wrap-layout__copy p + p {
+  margin-top: 1rem;
+}
+
+.experimental-wrap-layout__enhanced {
+  position: relative;
+}
+
+.experimental-wrap-layout__figure--enhanced {
+  position: absolute;
+  top: 0;
+}
+
+.experimental-wrap-layout--right .experimental-wrap-layout__figure--enhanced {
+  right: 0;
+}
+
+.experimental-wrap-layout--left .experimental-wrap-layout__figure--enhanced {
+  left: 0;
+}
+
+.experimental-wrap-layout__line-layer {
+  position: relative;
+  min-height: 1px;
+}
+
+.experimental-wrap-layout__line {
+  position: absolute;
+  display: block;
+  white-space: pre;
+  font-size: 1.35rem;
+  line-height: 1.68;
+  color: #304036;
+}
+
 @keyframes rise {
   from {
     opacity: 0;
@@ -751,6 +842,10 @@ code {
 
   .related-grid {
     grid-template-columns: 1fr;
+  }
+
+  .experimental-wrap-layout {
+    --experimental-figure-gap: 1.25rem;
   }
 
   .toc-mobile-toggle {
@@ -967,5 +1062,17 @@ code {
   .article-body ol {
     font-size: 1.1rem;
     line-height: 1.68;
+  }
+
+  .experimental-wrap-layout {
+    margin-bottom: 2rem;
+  }
+
+  .experimental-wrap-layout__figure {
+    width: min(100%, 18rem);
+  }
+
+  .experimental-wrap-layout__line {
+    font-size: 1.1rem;
   }
 }

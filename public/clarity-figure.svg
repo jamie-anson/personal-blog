@@ -1,0 +1,15 @@
+<svg width="960" height="1200" viewBox="0 0 960 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="1200" rx="56" fill="#EEF1E5"/>
+  <rect x="64" y="64" width="832" height="1072" rx="36" fill="#FBFBF5" stroke="#C7D4BC" stroke-width="2"/>
+  <path d="M160 230C160 205.699 179.699 186 204 186H756C780.301 186 800 205.699 800 230V314C800 338.301 780.301 358 756 358H204C179.699 358 160 338.301 160 314V230Z" fill="#E1EAD9"/>
+  <path d="M160 454C160 429.699 179.699 410 204 410H756C780.301 410 800 429.699 800 454V538C800 562.301 780.301 582 756 582H204C179.699 582 160 562.301 160 538V454Z" fill="#EFF3E9"/>
+  <path d="M160 678C160 653.699 179.699 634 204 634H756C780.301 634 800 653.699 800 678V762C800 786.301 780.301 806 756 806H204C179.699 806 160 786.301 160 762V678Z" fill="#E1EAD9"/>
+  <path d="M160 902C160 877.699 179.699 858 204 858H756C780.301 858 800 877.699 800 902V986C800 1010.3 780.301 1030 756 1030H204C179.699 1030 160 1010.3 160 986V902Z" fill="#EFF3E9"/>
+  <text x="480" y="292" fill="#365F35" font-family="Avenir Next, Arial, sans-serif" font-size="68" font-weight="600" letter-spacing="10" text-anchor="middle">BELIEF</text>
+  <text x="480" y="516" fill="#223128" font-family="Avenir Next, Arial, sans-serif" font-size="68" font-weight="600" letter-spacing="10" text-anchor="middle">SEAM</text>
+  <text x="480" y="740" fill="#365F35" font-family="Avenir Next, Arial, sans-serif" font-size="68" font-weight="600" letter-spacing="10" text-anchor="middle">SPEC</text>
+  <text x="480" y="964" fill="#223128" font-family="Avenir Next, Arial, sans-serif" font-size="68" font-weight="600" letter-spacing="10" text-anchor="middle">SECTION</text>
+  <path d="M480 358V410" stroke="#8CA284" stroke-width="4" stroke-linecap="round"/>
+  <path d="M480 582V634" stroke="#8CA284" stroke-width="4" stroke-linecap="round"/>
+  <path d="M480 806V858" stroke="#8CA284" stroke-width="4" stroke-linecap="round"/>
+</svg>
