@@ -762,6 +762,8 @@ code {
 .experimental-wrap-layout__figure--enhanced {
   position: absolute;
   top: 0;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .experimental-wrap-layout--right .experimental-wrap-layout__figure--enhanced {
