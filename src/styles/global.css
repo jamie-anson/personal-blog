@@ -720,7 +720,7 @@ code {
   gap: 1.25rem;
 }
 
-.experimental-wrap-layout__figure {
+.experimental-wrap-layout .experimental-wrap-layout__figure {
   width: min(100%, var(--experimental-figure-width));
   margin: 0;
 }

@@ -8,8 +8,16 @@ type ParagraphLayout = {
 const ROOT_SELECTOR = '[data-experimental-wrap-root]';
 
 const getPxValue = (value: string, fallback: number) => {
-  const parsed = Number.parseFloat(value);
-  return Number.isFinite(parsed) ? parsed : fallback;
+  const trimmed = value.trim();
+  const parsed = Number.parseFloat(trimmed);
+  if (!Number.isFinite(parsed)) {
+    return fallback;
+  }
+  if (trimmed.endsWith('rem')) {
+    const rootFontSize = Number.parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+    return parsed * rootFontSize;
+  }
+  return parsed;
 };
 
 const getLineHeight = (style: CSSStyleDeclaration) => {
