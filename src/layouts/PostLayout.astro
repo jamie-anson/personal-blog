@@ -128,14 +128,12 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
         relatedPosts.length > 0 && (
           <footer class="article-footer">
             <div class="article-footer-heading">
-              <p class="eyebrow">Further reading</p>
-              <h2>Keep exploring the model</h2>
+              <p class="eyebrow">Keep exploring the model</p>
             </div>
             <div class="related-grid">
               {
                 relatedPosts.map((post) => (
                   <a class="related-card" href={`/posts/${post.slug}/`}>
-                    <p class="card-meta">Essay</p>
                     <h3>{post.data.title}</h3>
                     <p>{post.data.description}</p>
                   </a>
