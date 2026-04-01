@@ -1075,8 +1075,8 @@ code {
   .article-body p,
   .article-body li,
   .article-body ol {
-    font-size: 1.1rem;
-    line-height: 1.68;
+    font-size: 1.32rem;
+    line-height: 2;
   }
 
   .experimental-wrap-layout {
