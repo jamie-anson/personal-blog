@@ -34,7 +34,7 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
 ---
 
 <BaseLayout title={`${title} | Essays`} description={description}>
-  <div class="article-layout">
+  <div class:list={['article-layout', tocHeadings.length === 0 && 'article-layout--no-toc']}>
     {
       tocHeadings.length > 0 && (
         <aside class="article-toc" aria-label="On this page" data-toc-root>

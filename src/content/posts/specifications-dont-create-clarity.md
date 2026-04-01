@@ -6,8 +6,6 @@ featured: false
 draft: false
 ---
 
-Specifications Don’t Create Clarity
-
 AI was meant to simplify work. You describe what you want, and the machine produces it faster and cheaper than a team ever could, which is why so many companies rushed to adopt it.
 
 So why are teams producing more, but delivering less?
@@ -35,7 +33,7 @@ Which raises the real question.
 What is the promise?
 
 
-Start with the seam, not the spec
+## Start with the seam, not the spec
 
 In a restaurant, the promise exists before any order is placed. Food should arrive hot, within a reasonable time, cooked as requested, and leave the guest satisfied. That standard holds whether the order is simple or complex, and it defines what “good” looks like before any individual request is made.
 
@@ -52,7 +50,7 @@ Clarity does not come from the spec. It comes from the seam.
 And once that is clear, something else becomes unavoidable. The request will change.
 
 
-A good spec is disposable
+## A good spec is disposable
 
 Every order in a restaurant is different, even when it looks the same. The details shift, the context changes, and what worked for one table may not work for the next. The system handles this naturally, because it is not built around preserving past instructions but around fulfilling the promise each time.
 
@@ -65,7 +63,7 @@ The seam stays stable. The spec changes with every request.
 But if the spec is constantly changing, it cannot rely on fixed steps to hold everything together. Something else has to remain consistent.
 
 
-A good spec defines intent before steps
+## A good spec defines intent before steps
 
 In a kitchen, you do not succeed by following instructions blindly. The same steak behaves differently depending on thickness, heat, and timing, so rigid steps produce inconsistent results. What matters is the outcome, not the sequence.
 
@@ -78,7 +76,7 @@ The plan will fail. The goal must survive it.
 But survival is not enough. You still need to know if it worked.
 
 
-A good spec is testable
+## A good spec is testable
 
 In a restaurant, success is not debated. It is observed. Did the dish arrive on time? Was it cooked correctly? Did the guest enjoy it or send it back?
 
@@ -93,7 +91,7 @@ Clarity is what can be tested.
 But not everything that matters can be reduced to steps, and trying to do so creates a different problem.
 
 
-A good spec leaves room for craft
+## A good spec leaves room for craft
 
 Most companies respond to uncertainty by specifying more, as if ambiguity can be eliminated through detail. In a kitchen, that would mean removing judgement from the chef entirely and replacing it with rigid instructions that must be followed regardless of context.
 
@@ -106,7 +104,7 @@ When everything is specified, the only option is compliance. When the outcome is
 But space without structure introduces inconsistency, which leads to the next problem.
 
 
-A good spec is structured for machines
+## A good spec is structured for machines
 
 Specs are no longer written only for humans. They are read, interpreted, and acted on by AI systems, which means they must be structured in a way that reduces ambiguity and supports consistent execution.
 
@@ -119,7 +117,7 @@ Structure is what makes clarity usable.
 But even a well-structured spec is only one part of the system it operates within.
 
 
-A good spec connects to the system
+## A good spec connects to the system
 
 A restaurant improves because it connects orders to outcomes. Guest feedback, kitchen timing, and patterns in returns all feed back into how the system operates, shaping how future orders are handled.
 
@@ -132,7 +130,7 @@ Work does not just get done. It gets better.
 And that points to the real purpose of the spec.
 
 
-A good spec accelerates learning
+## A good spec accelerates learning
 
 In traditional systems, specifications are used to reduce risk by trying to prevent mistakes before they happen. In practice, this slows everything down while still failing to eliminate error, because it assumes the plan can anticipate reality.
 
@@ -145,7 +143,7 @@ Learning, not control, is the point.
 Which makes the shift clear.
 
 
-The shift
+## The shift
 
 Most companies write specs to reduce risk, because their systems are built around avoiding failure.
 
@@ -154,7 +152,7 @@ AI-native companies use specs to increase speed, because their systems are built
 One approach tries to prevent mistakes. The other is designed to expose them early and correct them.
 
 
-The one line to remember
+## The one line to remember
 
 A good spec is not a perfect plan.
 

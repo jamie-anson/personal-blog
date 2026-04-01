@@ -478,6 +478,11 @@ code {
   gap: 1.5rem;
 }
 
+.article-layout--no-toc {
+  grid-template-columns: minmax(0, 52rem);
+  justify-content: center;
+}
+
 .article-toc {
   position: sticky;
   top: 1.5rem;
