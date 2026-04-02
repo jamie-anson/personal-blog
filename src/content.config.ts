@@ -5,6 +5,12 @@ const posts = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    audio: z
+      .object({
+        src: z.string(),
+        title: z.string().optional()
+      })
+      .optional(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     featured: z.boolean().default(false),

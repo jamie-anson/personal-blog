@@ -4,6 +4,10 @@ import BaseLayout from './BaseLayout.astro';
 interface Props {
   title: string;
   description: string;
+  audio?: {
+    src: string;
+    title?: string;
+  };
   pubDate: Date;
   updatedDate?: Date;
   readingTime?: number;
@@ -24,6 +28,7 @@ interface Props {
 const {
   title,
   description,
+  audio,
   pubDate,
   updatedDate,
   readingTime,
@@ -119,6 +124,19 @@ const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.
           </div>
           <h1>{title}</h1>
           <p class="lede">{description}</p>
+          {
+            audio && (
+              <div class="article-audio">
+                <div class="article-audio-copy">
+                  <p class="article-audio-label">{audio.title ?? 'Listen to this article'}</p>
+                  <p class="article-audio-hint">Audio version</p>
+                </div>
+                <audio controls preload="none" src={audio.src}>
+                  <a href={audio.src}>Download the audio version of this article</a>
+                </audio>
+              </div>
+            )
+          }
         </div>
       </header>
       <div class="article-body">

@@ -1,6 +1,9 @@
 ---
 title: Clarity
 description: Why clarity becomes the operating constraint once execution stops being the bottleneck.
+audio:
+  src: /audio/clarity.m4a
+  title: Listen to Clarity
 pubDate: 2026-04-01
 updatedDate: 2026-04-01
 featured: true
