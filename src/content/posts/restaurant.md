@@ -1,8 +1,22 @@
 ---
 title: The Restaurant That Didn't Fire Its Chef
 description: Clarity explained through a restaurant.
+audio:
+  src: /audio/restaurant.m4a
+  title: Listen to The Restaurant That Didn't Fire Its Chef
+tags:
+  - restaurant metaphor
+  - AI-native companies
+  - role design
+  - automation
+keywords:
+  - AI restaurant analogy
+  - chef automation
+  - clarity explained
+category: Essays
 pubDate: 2026-03-30
 featured: false
+socialImage: /images/posts/the-restaurant-that-didnt-fire-its-chef/robby-next-robot.jpeg
 draft: false
 ---
 
