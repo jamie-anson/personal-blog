@@ -1,6 +1,60 @@
 import { site } from './site';
 
-type ArticleStructuredDataInput = {
+type StructuredDataValue = Record<string, unknown> | Array<Record<string, unknown>>;
+
+export function toAbsoluteUrl(pathOrUrl?: string) {
+  if (!pathOrUrl) return undefined;
+
+  try {
+    return new URL(pathOrUrl).toString();
+  } catch {
+    return new URL(pathOrUrl, site.url).toString();
+  }
+}
+
+export function stringifyStructuredData(value: StructuredDataValue) {
+  return JSON.stringify(value, null, 2);
+}
+
+export function buildSiteStructuredData() {
+  const websiteId = `${site.url}/#website`;
+  const personId = `${site.url}/#author`;
+  const organizationId = `${site.url}/#organization`;
+
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'WebSite',
+          '@id': websiteId,
+          url: site.url,
+          name: site.title,
+          description: site.description,
+          publisher: { '@id': organizationId },
+          inLanguage: 'en-GB'
+        },
+        {
+          '@type': 'Organization',
+          '@id': organizationId,
+          name: site.publisher.name,
+          url: site.publisher.url,
+          logo: site.publisher.logo,
+          sameAs: site.sameAs
+        },
+        {
+          '@type': 'Person',
+          '@id': personId,
+          name: site.author.name,
+          url: site.author.url,
+          sameAs: site.sameAs
+        }
+      ]
+    }
+  ];
+}
+
+type ArticleMetadataOptions = {
   title: string;
   description: string;
   canonicalUrl: string;
@@ -12,18 +66,6 @@ type ArticleStructuredDataInput = {
   category?: string;
 };
 
-export function toAbsoluteUrl(pathOrUrl?: string) {
-  if (!pathOrUrl) {
-    return undefined;
-  }
-
-  try {
-    return new URL(pathOrUrl).toString();
-  } catch {
-    return new URL(pathOrUrl, site.url).toString();
-  }
-}
-
 export function buildArticleStructuredData({
   title,
   description,
@@ -34,27 +76,31 @@ export function buildArticleStructuredData({
   tags = [],
   keywords = [],
   category
-}: ArticleStructuredDataInput) {
+}: ArticleMetadataOptions) {
+  const websiteId = `${site.url}/#website`;
+  const personId = `${site.url}/#author`;
+  const organizationId = `${site.url}/#organization`;
+
   return {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
+    mainEntityOfPage: canonicalUrl,
     headline: title,
     description,
-    mainEntityOfPage: canonicalUrl,
-    url: canonicalUrl,
     datePublished: publishedTime,
     dateModified: modifiedTime ?? publishedTime,
-    image,
-    keywords: [...tags, ...keywords].join(', ') || undefined,
-    articleSection: category,
     author: {
-      '@type': 'Person',
-      name: 'Jamie Anson'
+      '@id': personId
     },
     publisher: {
-      '@type': 'Organization',
-      name: site.name,
-      url: site.url
-    }
+      '@id': organizationId
+    },
+    isPartOf: {
+      '@id': websiteId
+    },
+    inLanguage: 'en-GB',
+    articleSection: category,
+    keywords: [...tags, ...keywords].join(', ') || undefined,
+    image: image ? [image] : undefined
   };
 }

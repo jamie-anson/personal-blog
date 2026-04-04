@@ -1,12 +1,23 @@
 ---
 title: Clarity
 description: Why clarity becomes the operating constraint once execution stops being the bottleneck.
+tags:
+  - clarity
+  - AI-native companies
+  - operating systems
+  - execution
+keywords:
+  - clarity
+  - AI-native operating model
+  - execution bottleneck
+category: Essays
 audio:
   src: /audio/clarity.m4a
   title: Listen to Clarity
 pubDate: 2026-04-01
 updatedDate: 2026-04-01
 featured: true
+socialImage: /clarity-figure.svg
 draft: false
 ---
 
