@@ -5,10 +5,25 @@ interface Props {
   title?: string;
   description?: string;
   hideHeader?: boolean;
+  ogType?: string;
+  ogImage?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title = site.title, description = site.description, hideHeader = false } = Astro.props;
+const {
+  title = site.title,
+  description = site.description,
+  hideHeader = false,
+  ogType = 'website',
+  ogImage,
+  structuredData
+} = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.url);
+const structuredDataItems = Array.isArray(structuredData)
+  ? structuredData
+  : structuredData
+    ? [structuredData]
+    : [];
 ---
 
 <!doctype html>
@@ -21,19 +36,26 @@ const canonical = new URL(Astro.url.pathname, site.url);
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#f6f3ee" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={site.name} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
     <link rel="alternate" type="application/rss+xml" title={`${site.title} RSS Feed`} href="/rss.xml" />
     <link rel="alternate" type="application/rss+xml" title={`${site.title} Audio Feed`} href="/audio.xml" />
     <link rel="icon" href="/favicon-v2.svg" type="image/svg+xml" />
     <link rel="shortcut icon" href="/favicon-v2.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/favicon-v2.svg" />
+    {
+      structuredDataItems.map((item) => (
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(item)} />
+      ))
+    }
   </head>
   <body>
     <div class="page-shell">

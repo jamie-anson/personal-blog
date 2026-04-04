@@ -8,7 +8,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "preview:workers": "pnpm run build && wrangler dev",
+    "check": "astro check",
+    "deploy": "pnpm run build && wrangler deploy"
   },
   "dependencies": {
     "@chenglou/pretext": "^0.0.3",
@@ -19,6 +21,7 @@
     "@astrojs/check": "^0.9.8",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^25.5.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.80.0"
   }
 }
