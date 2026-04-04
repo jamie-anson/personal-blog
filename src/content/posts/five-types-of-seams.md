@@ -1,6 +1,18 @@
 ---
 title: The Five Types of Seams
-description: The five seam types that hold the Clarity Method together, from outcomes and standards to trust and feedback.
+description: The five seam types that hold Clarity together, from outcomes and standards to trust and feedback.
+tags:
+  - seams
+  - clarity
+  - systems design
+  - feedback loops
+keywords:
+  - outcome seams
+  - constraint seams
+  - operational seams
+  - trust seams
+  - feedback seams
+category: Framework
 pubDate: 2026-03-30
 featured: false
 draft: false

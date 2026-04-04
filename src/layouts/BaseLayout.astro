@@ -1,13 +1,19 @@
 ---
 import { site } from '../lib/site';
+import {
+  buildSiteStructuredData,
+  stringifyStructuredData,
+  toAbsoluteUrl
+} from '../lib/metadata';
 
 interface Props {
   title?: string;
   description?: string;
   hideHeader?: boolean;
-  ogType?: string;
+  ogType?: 'website' | 'article';
   ogImage?: string;
-  structuredData?: Record<string, unknown> | Record<string, unknown>[];
+  robots?: string;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 const {
@@ -16,14 +22,12 @@ const {
   hideHeader = false,
   ogType = 'website',
   ogImage,
+  robots = 'index, follow',
   structuredData
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.url);
-const structuredDataItems = Array.isArray(structuredData)
-  ? structuredData
-  : structuredData
-    ? [structuredData]
-    : [];
+const resolvedOgImage = toAbsoluteUrl(ogImage ?? site.defaultOgImage);
+const structuredDataBlocks = [...buildSiteStructuredData(), ...(structuredData ? [structuredData] : [])];
 ---
 
 <!doctype html>
@@ -33,6 +37,7 @@ const structuredDataItems = Array.isArray(structuredData)
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#f6f3ee" />
@@ -41,19 +46,20 @@ const structuredDataItems = Array.isArray(structuredData)
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={site.name} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:locale" content="en_GB" />
+    {resolvedOgImage && <meta property="og:image" content={resolvedOgImage} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    {ogImage && <meta name="twitter:image" content={ogImage} />}
+    {resolvedOgImage && <meta name="twitter:image" content={resolvedOgImage} />}
     <link rel="alternate" type="application/rss+xml" title={`${site.title} RSS Feed`} href="/rss.xml" />
     <link rel="alternate" type="application/rss+xml" title={`${site.title} Audio Feed`} href="/audio.xml" />
     <link rel="icon" href="/favicon-v2.svg" type="image/svg+xml" />
     <link rel="shortcut icon" href="/favicon-v2.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/favicon-v2.svg" />
     {
-      structuredDataItems.map((item) => (
-        <script is:inline type="application/ld+json" set:html={JSON.stringify(item)} />
+      structuredDataBlocks.map((item) => (
+        <script is:inline type="application/ld+json" set:html={stringifyStructuredData(item)} />
       ))
     }
   </head>

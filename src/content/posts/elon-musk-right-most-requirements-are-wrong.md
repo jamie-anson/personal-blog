@@ -1,6 +1,16 @@
 ---
 title: "Elon Musk Is Right: Most Requirements Are Wrong"
 description: Why cutting requirements helps, but why clarity makes the cut obvious before force is needed.
+tags:
+  - requirements
+  - specifications
+  - clarity
+  - AI execution
+keywords:
+  - most requirements are wrong
+  - requirement reduction
+  - clarity
+category: Essays
 pubDate: 2026-03-31
 featured: false
 draft: false
@@ -46,7 +56,7 @@ But in a restaurant, you don’t need that rule. Nobody says “delete 10% of th
 
 ## A Seam Makes the Cut Obvious
 
-In the Clarity Method, that structure is called a seam.
+In Clarity, that structure is called a seam.
 
 A seam defines what must happen and how success is measured. In the restaurant, it might be this: serve a hot, medium-rare steak within 20 minutes, with at least 80% of guests rating it four stars or above.
 
@@ -57,7 +67,7 @@ Once that is clear, every requirement can be tested against it. If it doesn’t 
 
 ## Two Ways to Reach the Same Place
 
-Musk cuts to discover clarity because the system doesn’t provide it. The Clarity Method defines clarity first, so the cut becomes obvious.
+Musk cuts to discover clarity because the system doesn’t provide it. Clarity defines it first, so the cut becomes obvious.
 
 Both approaches remove the same things, but one relies on force while the other relies on structure.
 

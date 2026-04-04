@@ -1,6 +1,16 @@
 ---
 title: Specifications Don't Create Clarity
 description: Why good specs should be disposable, testable, and anchored to a seam instead of pretending to be perfect plans.
+tags:
+  - specifications
+  - clarity
+  - prompts
+  - AI-native systems
+keywords:
+  - disposable specs
+  - testable specifications
+  - seam driven specs
+category: Essays
 pubDate: 2026-04-01
 featured: false
 draft: false
