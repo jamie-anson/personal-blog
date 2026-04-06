@@ -583,11 +583,6 @@ code {
   margin: 0.45rem 0 1.1rem;
 }
 
-.article-title-block .lede {
-  margin: 0;
-  max-width: 40rem;
-}
-
 .article-highlights {
   display: grid;
   gap: 0.9rem;
@@ -622,8 +617,8 @@ code {
 .article-highlights-list li {
   margin: 0;
   color: #304036;
-  font-size: 1.08rem;
-  line-height: 1.65;
+  font-size: 1.35rem;
+  line-height: 1.7;
 }
 
 .article-audio {
@@ -1134,14 +1129,9 @@ code {
     line-height: 0.98;
   }
 
-  .lede {
-    font-size: 1.05rem;
-    line-height: 1.58;
-  }
-
   .article-highlights-list li {
-    font-size: 1rem;
-    line-height: 1.55;
+    font-size: 1.32rem;
+    line-height: 2;
   }
 
   .article-body {
