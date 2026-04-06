@@ -1,6 +1,10 @@
 ---
 title: Clarity
 description: Why clarity becomes the operating constraint once execution stops being the bottleneck.
+highlights:
+  - The constraint is no longer skill. The constraint is clarity.
+  - Clarity does not replace this structure. It builds on top of it.
+  - This is not a vision or an aspiration. It is a contract.
 tags:
   - clarity
   - AI-native companies

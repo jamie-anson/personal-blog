@@ -1,6 +1,10 @@
 ---
 title: Specifications Don't Create Clarity
 description: Why good specs should be disposable, testable, and anchored to a seam instead of pretending to be perfect plans.
+highlights:
+  - So why are teams producing more, but delivering less?
+  - A good spec is not a wall of instructions. It is a way of fulfilling a promise.
+  - The plan will fail. The goal must survive it.
 tags:
   - specifications
   - clarity

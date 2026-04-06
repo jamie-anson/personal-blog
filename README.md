@@ -7,7 +7,7 @@ A minimal Astro blog focused on essays about AI-native companies.
 - Astro
 - Static output
 - Markdown content collections
-- Cloudflare Pages deployment via GitHub
+- GitHub-triggered Cloudflare Pages deployment
 
 ## Local development
 
@@ -34,14 +34,30 @@ The current featured essay is:
 
 To add a new post, create another Markdown file in that directory with frontmatter matching the collection schema in `src/content.config.ts`.
 
-## Cloudflare Pages
+## Deployment
 
-Suggested settings for this repo:
+This site deploys through `GitHub -> Cloudflare Pages`.
+
+The deployment flow is:
+
+1. Push changes to GitHub.
+2. Cloudflare Pages builds the site from the connected repository.
+3. Pushes to `main` deploy to production.
+4. Other branches can create preview deployments if Cloudflare Pages preview builds are enabled.
+
+Cloudflare Pages project settings for this repo:
 
 - Framework preset: `Astro`
 - Production branch: `main`
 - Build command: `pnpm build`
 - Build output directory: `dist`
+
+Important:
+
+- This repo does not use Cloudflare Workers for deployment.
+- This repo does not need `wrangler.toml`, `wrangler.json`, or `wrangler.jsonc`.
+- Do not use `wrangler deploy` as the primary deployment path for this site.
+- The source of truth for production is the GitHub-connected Cloudflare Pages project.
 
 If you later add a custom domain, update:
 
