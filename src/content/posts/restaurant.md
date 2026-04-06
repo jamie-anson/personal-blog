@@ -1,6 +1,10 @@
 ---
 title: The Restaurant That Didn't Fire Its Chef
 description: Clarity explained through a restaurant.
+highlights:
+  - From a distance, the decision feels obvious. Replace the chef.
+  - Not the job they'll lose, but the future they'll lose.
+  - With Clarity, the job is to own the outcome.
 audio:
   src: /audio/restaurant.m4a
   title: Listen to The Restaurant That Didn't Fire Its Chef

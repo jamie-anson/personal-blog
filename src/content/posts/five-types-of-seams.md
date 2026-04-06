@@ -1,6 +1,10 @@
 ---
 title: The Five Types of Seams
 description: The five seam types that hold Clarity together, from outcomes and standards to trust and feedback.
+highlights:
+  - That is not a method. It is a target that shapes every decision that follows.
+  - The difference between good and great is the ability to learn from what actually happens
+  - A feedback seam is a contract to learn
 tags:
   - seams
   - clarity

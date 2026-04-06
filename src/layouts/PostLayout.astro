@@ -5,6 +5,7 @@ import { buildArticleStructuredData, toAbsoluteUrl } from '../lib/metadata';
 interface Props {
   title: string;
   description: string;
+  highlights?: string[];
   slug: string;
   audio?: {
     src: string;
@@ -34,6 +35,7 @@ interface Props {
 const {
   title,
   description,
+  highlights = [],
   slug,
   audio,
   pubDate,
@@ -154,6 +156,19 @@ const articleStructuredData = buildArticleStructuredData({
           </div>
           <h1>{title}</h1>
           <p class="lede">{description}</p>
+          {
+            highlights.length > 0 && (
+              <section class="article-highlights" aria-labelledby="article-highlights-title">
+                <div class="article-highlights-header">
+                  <p class="article-highlights-eyebrow" id="article-highlights-title">Highlights</p>
+                  <p class="article-highlights-hint">Pull quotes from the piece</p>
+                </div>
+                <ul class="article-highlights-list">
+                  {highlights.map((highlight) => <li>{highlight}</li>)}
+                </ul>
+              </section>
+            )
+          }
           {
             audio && (
               <div class="article-audio">

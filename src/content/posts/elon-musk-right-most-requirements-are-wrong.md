@@ -1,6 +1,10 @@
 ---
 title: "Elon Musk Is Right: Most Requirements Are Wrong"
 description: Why cutting requirements helps, but why clarity makes the cut obvious before force is needed.
+highlights:
+  - When you don’t know what matters, removing things is the only way to find out.
+  - Both approaches remove the same things, but one relies on force while the other relies on structure.
+  - AI does not interpret intent. It executes what is written.
 tags:
   - requirements
   - specifications
