@@ -161,10 +161,9 @@ const articleStructuredData = buildArticleStructuredData({
               <section class="article-highlights" aria-labelledby="article-highlights-title">
                 <div class="article-highlights-header">
                   <p class="article-highlights-eyebrow" id="article-highlights-title">Highlights</p>
-                  <p class="article-highlights-hint">Pull quotes from the piece</p>
                 </div>
                 <ul class="article-highlights-list">
-                  {highlights.map((highlight) => <li>{highlight}</li>)}
+                  {highlights.map((highlight) => <li>"{highlight}"</li>)}
                 </ul>
               </section>
             )
