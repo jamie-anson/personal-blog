@@ -2,9 +2,9 @@
 title: Clarity
 description: Why clarity becomes the operating constraint once execution stops being the bottleneck.
 highlights:
-  - Execution is no longer the constraint
-  - What limits progress is no longer whether something can be built, but whether the system knows what it’s trying to achieve.
-  - ...hesitation becomes visible, delays become visible, trade-offs become visible.
+  - "Execution is no longer the constraint"
+  - "What limits progress is no longer whether something can be built, but whether the system knows what it’s trying to achieve."
+  - "...hesitation becomes visible, delays become visible, trade-offs become visible."
 tags:
   - clarity
   - AI-native companies
