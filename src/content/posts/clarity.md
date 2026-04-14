@@ -2,9 +2,9 @@
 title: Clarity
 description: Why clarity becomes the operating constraint once execution stops being the bottleneck.
 highlights:
-  - The constraint is no longer skill. The constraint is clarity.
-  - Clarity does not replace this structure. It builds on top of it.
-  - This is not a vision or an aspiration. It is a contract.
+  - "Execution is no longer the constraint"
+  - "What limits progress is no longer whether something can be built, but whether the system knows what it’s trying to achieve."
+  - '"...hesitation becomes visible, delays become visible, trade-offs become visible."'
 tags:
   - clarity
   - AI-native companies
@@ -19,7 +19,7 @@ audio:
   src: /audio/clarity.m4a
   title: Listen to Clarity
 pubDate: 2026-04-01
-updatedDate: 2026-04-01
+updatedDate: 2026-04-14
 featured: true
 socialImage: /clarity-figure.svg
 draft: false
