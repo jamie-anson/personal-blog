@@ -24,9 +24,9 @@ socialImage: /images/posts/the-restaurant-that-didnt-fire-its-chef/robby-next-ro
 draft: false
 ---
 
-AI is coming for the kitchen. Not slowly or politely, but directly. And this time, it can actually cook.
+AI is coming for the kitchen, not slowly or politely, but directly. And this time, it can actually cook.
 
-Companies are looking at systems like the [Moley Robotic Kitchen](https://www.moley.com/) or [Robby AI](https://nextrobot.com/robby) and seeing one clear benefit: cost reduction. A robot doesn't call in sick, doesn't need training, and produces the same dish every time. From a distance, the decision feels obvious. Replace the chef.
+Companies are looking at systems like the Moley Robotic Kitchen or Robby AI and seeing one clear benefit: cost reduction. A robot doesn’t call in sick, doesn’t need training, and produces the exact same dish every time. So the decision seems obvious: replace the chef.
 
 <figure>
   <img
@@ -38,88 +38,54 @@ Companies are looking at systems like the [Moley Robotic Kitchen](https://www.mo
 
 ## What usually happens next
 
-The kitchen doesn't disappear. It degrades.
+The kitchen doesn’t disappear, it degrades. The chef becomes a machine operator — refilling ingredients, pressing start, serving whatever the machine produces.
 
-The chef is replaced by a machine operator whose job is to load pre-prepped ingredients into containers, select a recipe on a touchscreen, and press start. The system measures oil, controls heat, stirs at precise intervals, and plates the dish exactly the same way every time.
+There’s no creativity, no ownership, and no growth. They’re not cooking anymore, they’re maintaining a machine they don’t own. 
 
-There's no creativity, no ownership, and no growth. They aren't cooking anymore. They're maintaining a machine they don't control.
+This is what people are actually afraid of when they talk about AI. It’s not the job they’ll lose, it’s the future.
 
-This is what people are actually afraid of when they talk about AI. Not the job they'll lose, but the future they'll lose. The role still exists, but it no longer leads anywhere.
+Overnight, the skills, judgment, and pride that once defined them stop mattering. Even the belief they could one day open their own restaurant goes with it.
 
-## The mistake
-
-The problem isn't automation. It's where companies apply it.
-
-Most automate the work but leave the structure untouched. Systems like Moley or Robby don't assist the chef, they replace the act of cooking itself. Ingredients are prepped, portioned, and loaded into containers, and the machine handles the rest. It heats the wok to a set temperature, dispenses oil, adds ingredients in a fixed sequence, stirs with mechanical precision, and plates the result identically each time.
-
-The chef's hands are replaced, but nothing else changes. The role, the reporting line, and the definition of success all stay the same.
-
-So the job doesn't evolve. It shrinks.
-
-Skill is stripped out first, then judgment, then pride disappears. What's left is supervision, someone refilling containers and watching a machine execute something they used to care about.
-
-And supervision is a dead end.
-
-So the question isn't whether to automate. It's what would have to change for the role to grow instead of collapse.
+So what exactly is left for them?
 
 ## The Clarity shift
 
-Now imagine the same restaurant. The same machines. The same investment. But a different system.
+Now imagine the same restaurant. The same machines, the same investment, but a different system.
 
-Instead of defining the job by tasks, the restaurant defines it by outcome.
+This time, they use Clarity. The chef isn’t defined by cooking each dish by hand. They’re defined by a single outcome: create the best stir-fry in the area, stay within food cost, and increase repeat orders week after week.
 
-The chef now has a seam, a simple agreement with the head chef. Create the best stir-fry in the area, stay within food cost, and increase repeat orders week after week.
+That’s a seam — a clear contract that defines what success looks like.
 
-The machines still handle execution. They cook, stir, and plate each dish with consistency. But the chef decides what goes into it, how it tastes, and how it evolves over time.
+When that’s clear, the incentives line up. Improving the outcome improves everything else — the food, the business, and the person doing the work.
 
-That single contract replaces a long list of instructions and gives the role direction.
+That’s alignment — when improving the system improves the people inside it.
 
 ## What changes
 
-Now the machine handles consistency, and the chef handles results. The automation doesn't remove the role. It removes the repetitive parts of it.
+The machine handles consistency, and the chef handles results. With execution handled by the machine, what’s left is deciding what improves. The chef sources better ingredients and experiments with flavour, but the real shift is what they pay attention to.
 
-Freed from execution, the chef starts working differently. They test ways to make the chicken more tender, experimenting with brining and velveting to improve texture without increasing cost. They adjust the sauce balance, reducing sugar slightly after noticing customers leave sweeter dishes unfinished.
+What do customers actually reorder? What gets left on the plate? What brings people back?
 
-They watch what actually gets reordered, not just what gets served. They notice that dishes with more visible vegetables get better reviews, so they tweak presentation and ingredient ratios.
-
-They're not further from the kitchen. They're closer to the customer than ever, because the feedback loop now runs through them. And once feedback becomes the driver, the role itself starts to change.
+The job moves from making food to shaping the experience. They’re not further from the kitchen, they’re closer to the customer than ever.
 
 ## The role evolves
 
-Before, growth came from repetition. You cooked the same dish again and again, getting slightly better through consistency and habit.
+Before, getting better meant repetition. Cook the same dish again, refine the motion, improve the timing.
 
-Now, growth comes from feedback. What worked, what didn't, and what to change next becomes the driver of improvement. Progress comes from understanding the result, not just performing the task.
+Now, getting better means reading what happened and deciding what to change. A dish comes back half-eaten. Another gets reordered three times in one night. So they adjust – balance the sauce differently, change the cut of meat, try brining and velveting to improve texture.
 
-The chef isn't just executing anymore. They're shaping the system that produces the result, deciding what to change and why it matters.
+Each change is intentional, and each result feeds the next decision.
 
 ## The difference
 
-Without Clarity, the job is to operate the machine. Responsibility ends at execution, and the outcome belongs to someone else.
-
-With Clarity, the job is to own the outcome. The machine becomes a tool, not the role itself, and success is measured by what actually happens.
-
-That shift changes how the work feels, how it develops, and how valuable it becomes over time.
+Without Clarity, the job is to operate the machine. With Clarity, it’s to own the outcome.
 
 ## Why it matters
 
-AI doesn't flatten jobs by default. It only does when success is unclear, because in the absence of a defined outcome, the safest move is to standardise everything.
+AI doesn’t replace people. Misaligned incentives use it to strip jobs of meaning and ownership.
 
-That's how roles collapse into supervision. The system optimises for predictability, and people are left maintaining it instead of improving it.
+What’s missing is clarity. When the outcome is clear, machines take execution, and people own the outcome.
 
-But when the goal is clear, work expands upward. People take ownership of results and improvement, instead of being reduced to maintaining the system.
+The restaurant doesn’t just become faster, it becomes more alive. Better food, more engaged staff, tighter feedback loops.
 
-The real upgrade isn't efficiency. It's agency.
-
-## The chef at the end of it
-
-In one version of this restaurant, the chef becomes a button-pusher. The job is smaller, the future is narrower, and the work slowly loses meaning.
-
-In the other, the chef becomes the reason people come back. They refine recipes, respond to feedback, and improve the experience week after week.
-
-Same machines. Same cost savings. Completely different outcome.
-
-AI doesn't replace people. It reveals what their job actually was.
-
-And the difference isn't the technology.
-
-It's Clarity.
+So the question isn’t whether people are replaced. It’s whether incentives still make sense once AI is introduced.
