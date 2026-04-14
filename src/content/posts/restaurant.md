@@ -2,10 +2,10 @@
 title: The Restaurant That Didn't Fire Its Chef
 description: Clarity explained through a restaurant.
 highlights:
-  - "the decision seems obvious: replace the chef."
-  - "It’s not the job they’ll lose, it’s the future."
-  - "AI doesn’t replace people."
-  - "With Clarity, it’s to own the outcome."
+  - the decision seems obvious: replace the chef.
+  - It’s not the job they’ll lose, it’s the future.
+  - AI doesn’t replace people.
+  - With Clarity, it’s to own the outcome.
 audio:
   src: /audio/restaurant.m4a
   title: Listen to The Restaurant That Didn't Fire Its Chef
